@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="ok">OK</string>
+    <string name="cancel">Ακύρωση</string>
+    <string name="yes">Ναι</string>
+    <string name="no">Όχι</string>
+    <string name="error">Σφάλμα</string>
+    <string name="save">Αποθήκευση</string>
+    <string name="empty">Κενό</string>
+    <string name="back">Πίσω</string>
+    <string name="scoreboard">Πίνακας βαθμολογίας:</string>
+    <string name="player1">Παίκτης1</string>
+    <string name="player2">Παίκτης2</string>
+    <string name="score">Βαθμολογία:</string>
+    <string name="duel_score">%s βαθμολογία: %d\n%s βαθμολογία: %d</string>
+    <string name="scoreboard_format">%d. %s</string>
+    <string name="nick_empty">Το ψευδώνυμο δεν μπορεί να είναι κενό!</string>
+    <string name="fragment_settings_select_language">Επιλογή γλώσσας</string>
+    <string name="fragment_settings_max_number">Μέγ. αριθμός για μονομαχία</string>
+    <string name="fragment_menu_university">Τεχνολογικό Πανεπιστήμιο Rzeszów</string>
+    <string name="battle_view_bonus">Διαδοχικό μπόνους +%d</string>
+    <string name="fragment_modes_instruction">Επιλέξτε μια άσκηση από τη λίστα:</string>
+    <string name="fragment_modes_add_sub">Πρόσθεση και Αφαίρεση</string>
+    <string name="fragment_modes_mul_div">Πολλαπλασιασμός και Διαίρεση</string>
+    <string name="fragment_modes_divisibility">Διαιρετότητα</string>
+    <string name="fragment_modes_units">Μετατροπή μονάδων</string>
+    <string name="fragment_modes_table">Πίνακας πολλαπλασιασμού</string>
+    <string name="fragment_choose_player_instruction">Επιλέξτε έναν παίκτη από τη λίστα\nή δημιουργήστε νέο με το κουμπί συν</string>
+    <string name="fragment_player_names_instruction">Εισάγετε τα ψευδώνυμα των παικτών</string>
+    <string name="fragment_player_names_nickname_1">Ψευδώνυμο Παίκτη1 (πάνω):</string>
+    <string name="fragment_player_names_nickname_2">Ψευδώνυμο Παίκτη2 (κάτω):</string>
+    <string name="fragment_player_names_start">Έναρξη</string>
+    <string name="fragment_scoreboard_empty">Η λίστα βαθμολογιών είναι άδεια.\nΠαίξτε σε λειτουργία μάχης για να δείτε τα καλύτερα αποτελέσματα!</string>
+    <string name="units_help_hint">Υπόδειξη</string>
+    <string name="settings_fragment_max_number">Η τιμή δεν μπορεί να είναι μεγαλύτερη από: %1$d</string>
+    <string name="settings_fragment_min_number">Η τιμή δεν μπορεί να είναι μικρότερη από: %1$d</string>
+    <string name="battle_game_ended">Το παιχνίδι τελείωσε</string>
+    <string name="choose_player_input">Εισάγετε ψευδώνυμο νέου παίκτη:</string>
+    <string name="choose_player_nick_exist">Το ψευδώνυμο υπάρχει ήδη!</string>
+    <string name="divisibility_difficulty_1">Εύκολο</string>
+    <string name="divisibility_difficulty_2">Μέτριο</string>
+    <string name="divisibility_difficulty_3">Δύσκολο</string>
+    <string name="divisibility_difficulty_4">Πολύ Δύσκολο</string>
+    <string name="divisibility_question_p1">Είναι το</string>
+    <string name="divisibility_question_p2">διαιρετό με το</string>
+    <string name="units_time">Χρόνος</string>
+    <string name="units_length">Μήκος</string>
+    <string name="units_weight">Βάρος</string>
+    <string name="units_surface">Επιφάνεια</string>
+    <string name="units_all">Όλα</string>
+    <string name="time_units">μ,ω,λεπ,δευτ</string>
+    <string name="question_mark">\?</string>
+    <string name="prz_url">https://w.prz.edu.pl/en/</string>
+    <string name="weii_url">https://weii.prz.edu.pl/en/</string>
+    <string name="menu_play">Ασκήσεις</string>
+    <string name="menu_settings">Ρυθμίσεις</string>
+    <string name="menu_pvp">Μάχη</string>
+    <string name="menu_leaderboard">Κατάταξη</string>
+    
+    <!-- Player Selection Screen -->
+    <string name="no_players_yet">Δεν υπάρχουν παίκτες ακόμα!</string>
+    <string name="create_first_player">Δημιουργήστε τον πρώτο σας παίκτη για να ξεκινήσετε</string>
+    <string name="create_player">Δημιουργία Παίκτη</string>
+    <string name="add_player">Προσθήκη παίκτη</string>
+    <string name="nickname">Ψευδώνυμο</string>
+    <string name="error_creating_player">Σφάλμα κατά τη δημιουργία παίκτη</string>
+    <string name="high_score_games">Υψηλή Βαθμολογία: %1$d | Παιχνίδια: %2$d</string>
+    <string name="star">Αστέρι</string>
+    
+    <!-- Game Screen -->
+    <string name="question_counter">Ερώτηση %1$d / %2$d</string>
+    <string name="game_over">🎉 Τέλος Παιχνιδιού! 🎉</string>
+    <string name="result_excellent">Εξαιρετικά! 🌟</string>
+    <string name="result_great">Πολύ καλά! 👍</string>
+    <string name="result_good">Καλή προσπάθεια! 💪</string>
+    <string name="result_practice">Συνεχίστε την εξάσκηση! 📚</string>
+    <string name="score_saved">Η βαθμολογία αποθηκεύτηκε για %1$s!</string>
+    <string name="play_again">Παίξτε Ξανά</string>
+    <string name="check">ΕΛΕΓΧΟΣ ✓</string>
+    
+    <!-- PvP Battle Screen -->
+    <string name="back_to_menu">Πίσω στο Μενού</string>
+    <string name="player_wins">Ο/Η %1$s Κερδίζει! 🏆</string>
+    <string name="its_a_tie">Ισοπαλία! 🤝</string>
+    <string name="round_counter">Γύρος %1$d / %2$d</string>
+    <string name="both_correct">Και οι δύο ✓</string>
+    <string name="both_wrong">Και οι δύο ✗</string>
+    <string name="waiting">Αναμονή...</string>
+    <string name="correct">✓ Σωστό!</string>
+    <string name="wrong">✗ Λάθος</string>
+    <string name="answer_submitted">✓ Απάντηση Υποβλήθηκε</string>
+    
+    <!-- Unit conversion -->
+    <string name="unit_hours">ώρες</string>
+    <string name="unit_minutes">λεπτά</string>
+    <string name="unit_seconds">δευτερόλεπτα</string>
+    <string name="unit_meters">μέτρα</string>
+    <string name="unit_centimeters">εκατοστά</string>
+    <string name="unit_kilometers">χιλιόμετρα</string>
+    <string name="unit_kilograms">χιλιόγραμμα</string>
+    <string name="unit_grams">γραμμάρια</string>
+    <string name="unit_days">ημέρες</string>
+    <string name="unit_conversion_question">%1$d %2$s = ? %3$s</string>
+    <string name="divisibility_question">Είναι το %1$d διαιρετό με το %2$d;</string>
+
+</resources>

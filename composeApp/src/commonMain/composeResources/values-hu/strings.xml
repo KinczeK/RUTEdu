@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="ok">OK</string>
+    <string name="cancel">Mégse</string>
+    <string name="yes">Igen</string>
+    <string name="no">Nem</string>
+    <string name="error">Hiba</string>
+    <string name="save">Mentés</string>
+    <string name="empty">Üres</string>
+    <string name="back">Vissza</string>
+    <string name="scoreboard">Eredménytábla:</string>
+    <string name="player1">Játékos1</string>
+    <string name="player2">Játékos2</string>
+    <string name="score">Pontszám:</string>
+    <string name="duel_score">%s pontszám: %d\n%s pontszám: %d</string>
+    <string name="scoreboard_format">%d. %s</string>
+    <string name="nick_empty">A becenév nem lehet üres!</string>
+    <string name="fragment_settings_select_language">Nyelv kiválasztása</string>
+    <string name="fragment_settings_max_number">Max. szám a párbajhoz</string>
+    <string name="fragment_menu_university">Rzeszówi Műszaki Egyetem</string>
+    <string name="battle_view_bonus">Sorozat bónusz +%d</string>
+    <string name="fragment_modes_instruction">Válasszon egy feladatot a listából:</string>
+    <string name="fragment_modes_add_sub">Összeadás és Kivonás</string>
+    <string name="fragment_modes_mul_div">Szorzás és Osztás</string>
+    <string name="fragment_modes_divisibility">Oszthatóság</string>
+    <string name="fragment_modes_units">Mértékegység átváltás</string>
+    <string name="fragment_modes_table">Szorzótábla</string>
+    <string name="fragment_choose_player_instruction">Válasszon egy játékost a listából\nvagy hozzon létre újat a plusz gombbal</string>
+    <string name="fragment_player_names_instruction">Adja meg a játékosok beceneveit</string>
+    <string name="fragment_player_names_nickname_1">Játékos1 (fent) beceneve:</string>
+    <string name="fragment_player_names_nickname_2">Játékos2 (lent) beceneve:</string>
+    <string name="fragment_player_names_start">Indítás</string>
+    <string name="fragment_scoreboard_empty">Az eredménylista üres.\nJátsszon csata módban a legjobb eredmények megtekintéséhez!</string>
+    <string name="units_help_hint">Tipp</string>
+    <string name="settings_fragment_max_number">Az érték nem lehet nagyobb mint: %1$d</string>
+    <string name="settings_fragment_min_number">Az érték nem lehet kisebb mint: %1$d</string>
+    <string name="battle_game_ended">Játék vége</string>
+    <string name="choose_player_input">Adja meg az új játékos becenevét:</string>
+    <string name="choose_player_nick_exist">A becenév már létezik!</string>
+    <string name="divisibility_difficulty_1">Könnyű</string>
+    <string name="divisibility_difficulty_2">Közepes</string>
+    <string name="divisibility_difficulty_3">Nehéz</string>
+    <string name="divisibility_difficulty_4">Nagyon nehéz</string>
+    <string name="divisibility_question_p1">Osztható-e</string>
+    <string name="divisibility_question_p2">a következővel</string>
+    <string name="units_time">Idő</string>
+    <string name="units_length">Hosszúság</string>
+    <string name="units_weight">Súly</string>
+    <string name="units_surface">Terület</string>
+    <string name="units_all">Összes</string>
+    <string name="time_units">n,ó,p,mp</string>
+    <string name="question_mark">\?</string>
+    <string name="prz_url">https://w.prz.edu.pl/en/</string>
+    <string name="weii_url">https://weii.prz.edu.pl/en/</string>
+    <string name="menu_play">Feladatok</string>
+    <string name="menu_settings">Beállítások</string>
+    <string name="menu_pvp">Csata</string>
+    <string name="menu_leaderboard">Ranglista</string>
+    
+    <!-- Player Selection Screen -->
+    <string name="no_players_yet">Még nincsenek játékosok!</string>
+    <string name="create_first_player">Hozza létre az első játékosát a kezdéshez</string>
+    <string name="create_player">Játékos Létrehozása</string>
+    <string name="add_player">Játékos hozzáadása</string>
+    <string name="nickname">Becenév</string>
+    <string name="error_creating_player">Hiba a játékos létrehozásakor</string>
+    <string name="high_score_games">Legjobb Pontszám: %1$d | Játékok: %2$d</string>
+    <string name="star">Csillag</string>
+    
+    <!-- Game Screen -->
+    <string name="question_counter">Kérdés %1$d / %2$d</string>
+    <string name="game_over">🎉 Játék Vége! 🎉</string>
+    <string name="result_excellent">Kiváló! 🌟</string>
+    <string name="result_great">Nagyszerű munka! 👍</string>
+    <string name="result_good">Jó próbálkozás! 💪</string>
+    <string name="result_practice">Gyakorolj tovább! 📚</string>
+    <string name="score_saved">Pontszám mentve: %1$s!</string>
+    <string name="play_again">Játssz Újra</string>
+    <string name="check">ELLENŐRZÉS ✓</string>
+    
+    <!-- PvP Battle Screen -->
+    <string name="back_to_menu">Vissza a Menübe</string>
+    <string name="player_wins">%1$s Nyer! 🏆</string>
+    <string name="its_a_tie">Döntetlen! 🤝</string>
+    <string name="round_counter">Kör %1$d / %2$d</string>
+    <string name="both_correct">Mindkettő ✓</string>
+    <string name="both_wrong">Mindkettő ✗</string>
+    <string name="waiting">Várakozás...</string>
+    <string name="correct">✓ Helyes!</string>
+    <string name="wrong">✗ Helytelen</string>
+    <string name="answer_submitted">✓ Válasz Elküldve</string>
+    
+    <!-- Unit conversion -->
+    <string name="unit_hours">óra</string>
+    <string name="unit_minutes">perc</string>
+    <string name="unit_seconds">másodperc</string>
+    <string name="unit_meters">méter</string>
+    <string name="unit_centimeters">centiméter</string>
+    <string name="unit_kilometers">kilométer</string>
+    <string name="unit_kilograms">kilogramm</string>
+    <string name="unit_grams">gramm</string>
+    <string name="unit_days">nap</string>
+    <string name="unit_conversion_question">%1$d %2$s = ? %3$s</string>
+    <string name="divisibility_question">Osztható-e %1$d a %2$d-vel?</string>
+
+</resources>

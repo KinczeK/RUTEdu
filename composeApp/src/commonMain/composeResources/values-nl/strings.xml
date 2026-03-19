@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="ok">OK</string>
+    <string name="cancel">Annuleren</string>
+    <string name="yes">Ja</string>
+    <string name="no">Nee</string>
+    <string name="error">Fout</string>
+    <string name="save">Opslaan</string>
+    <string name="empty">Leeg</string>
+    <string name="back">Terug</string>
+    <string name="scoreboard">Scorebord:</string>
+    <string name="player1">Speler1</string>
+    <string name="player2">Speler2</string>
+    <string name="score">Score:</string>
+    <string name="duel_score">%s score: %d\n%s score: %d</string>
+    <string name="scoreboard_format">%d. %s</string>
+    <string name="nick_empty">Bijnaam mag niet leeg zijn!</string>
+    <string name="fragment_settings_select_language">Taal selecteren</string>
+    <string name="fragment_settings_max_number">Max. getal voor duel</string>
+    <string name="fragment_menu_university">Technische Universiteit Rzeszów</string>
+    <string name="battle_view_bonus">Opeenvolgende bonus +%d</string>
+    <string name="fragment_modes_instruction">Selecteer een oefening uit de lijst:</string>
+    <string name="fragment_modes_add_sub">Optellen en Aftrekken</string>
+    <string name="fragment_modes_mul_div">Vermenigvuldigen en Delen</string>
+    <string name="fragment_modes_divisibility">Deelbaarheid</string>
+    <string name="fragment_modes_units">Eenhedenomrekening</string>
+    <string name="fragment_modes_table">Tafels van vermenigvuldiging</string>
+    <string name="fragment_choose_player_instruction">Kies een speler uit de lijst\nof maak een nieuwe met de plus-knop</string>
+    <string name="fragment_player_names_instruction">Voer de bijnamen van de spelers in</string>
+    <string name="fragment_player_names_nickname_1">Bijnaam Speler1 (boven):</string>
+    <string name="fragment_player_names_nickname_2">Bijnaam Speler2 (onder):</string>
+    <string name="fragment_player_names_start">Starten</string>
+    <string name="fragment_scoreboard_empty">De scorelijst is leeg.\nSpeel in gevechtsmodus om de beste resultaten te zien!</string>
+    <string name="units_help_hint">Hint</string>
+    <string name="settings_fragment_max_number">Waarde mag niet groter zijn dan: %1$d</string>
+    <string name="settings_fragment_min_number">Waarde mag niet kleiner zijn dan: %1$d</string>
+    <string name="battle_game_ended">Spel beëindigd</string>
+    <string name="choose_player_input">Voer bijnaam van nieuwe speler in:</string>
+    <string name="choose_player_nick_exist">Bijnaam bestaat al!</string>
+    <string name="divisibility_difficulty_1">Makkelijk</string>
+    <string name="divisibility_difficulty_2">Medium</string>
+    <string name="divisibility_difficulty_3">Moeilijk</string>
+    <string name="divisibility_difficulty_4">Zeer Moeilijk</string>
+    <string name="divisibility_question_p1">Is</string>
+    <string name="divisibility_question_p2">deelbaar door</string>
+    <string name="units_time">Tijd</string>
+    <string name="units_length">Lengte</string>
+    <string name="units_weight">Gewicht</string>
+    <string name="units_surface">Oppervlakte</string>
+    <string name="units_all">Allemaal</string>
+    <string name="time_units">d,u,min,sec</string>
+    <string name="question_mark">\?</string>
+    <string name="prz_url">https://w.prz.edu.pl/en/</string>
+    <string name="weii_url">https://weii.prz.edu.pl/en/</string>
+    <string name="menu_play">Oefeningen</string>
+    <string name="menu_settings">Instellingen</string>
+    <string name="menu_pvp">Gevecht</string>
+    <string name="menu_leaderboard">Ranglijst</string>
+    
+    <!-- Player Selection Screen -->
+    <string name="no_players_yet">Nog geen spelers!</string>
+    <string name="create_first_player">Maak je eerste speler om te beginnen</string>
+    <string name="create_player">Speler Aanmaken</string>
+    <string name="add_player">Speler toevoegen</string>
+    <string name="nickname">Bijnaam</string>
+    <string name="error_creating_player">Fout bij aanmaken speler</string>
+    <string name="high_score_games">Hoogste Score: %1$d | Spellen: %2$d</string>
+    <string name="star">Ster</string>
+    
+    <!-- Game Screen -->
+    <string name="question_counter">Vraag %1$d / %2$d</string>
+    <string name="game_over">🎉 Spel Voorbij! 🎉</string>
+    <string name="result_excellent">Uitstekend! 🌟</string>
+    <string name="result_great">Geweldig! 👍</string>
+    <string name="result_good">Goede poging! 💪</string>
+    <string name="result_practice">Blijf oefenen! 📚</string>
+    <string name="score_saved">Score opgeslagen voor %1$s!</string>
+    <string name="play_again">Opnieuw Spelen</string>
+    <string name="check">CONTROLEREN ✓</string>
+    
+    <!-- PvP Battle Screen -->
+    <string name="back_to_menu">Terug naar Menu</string>
+    <string name="player_wins">%1$s Wint! 🏆</string>
+    <string name="its_a_tie">Gelijkspel! 🤝</string>
+    <string name="round_counter">Ronde %1$d / %2$d</string>
+    <string name="both_correct">Beide ✓</string>
+    <string name="both_wrong">Beide ✗</string>
+    <string name="waiting">Wachten...</string>
+    <string name="correct">✓ Correct!</string>
+    <string name="wrong">✗ Fout</string>
+    <string name="answer_submitted">✓ Antwoord Verzonden</string>
+    
+    <!-- Unit conversion -->
+    <string name="unit_hours">uren</string>
+    <string name="unit_minutes">minuten</string>
+    <string name="unit_seconds">seconden</string>
+    <string name="unit_meters">meters</string>
+    <string name="unit_centimeters">centimeters</string>
+    <string name="unit_kilometers">kilometers</string>
+    <string name="unit_kilograms">kilogram</string>
+    <string name="unit_grams">gram</string>
+    <string name="unit_days">dagen</string>
+    <string name="unit_conversion_question">%1$d %2$s = ? %3$s</string>
+    <string name="divisibility_question">Is %1$d deelbaar door %2$d?</string>
+
+</resources>

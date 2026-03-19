@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="ok">OK</string>
+    <string name="cancel">Zrušiť</string>
+    <string name="yes">Áno</string>
+    <string name="no">Nie</string>
+    <string name="error">Chyba</string>
+    <string name="save">Uložiť</string>
+    <string name="empty">Prázdne</string>
+    <string name="back">Späť</string>
+    <string name="scoreboard">Tabuľka výsledkov:</string>
+    <string name="player1">Hráč1</string>
+    <string name="player2">Hráč2</string>
+    <string name="score">Skóre:</string>
+    <string name="duel_score">%s skóre: %d\n%s skóre: %d</string>
+    <string name="scoreboard_format">%d. %s</string>
+    <string name="nick_empty">Prezývka nemôže byť prázdna!</string>
+    <string name="fragment_settings_select_language">Vybrať jazyk</string>
+    <string name="fragment_settings_max_number">Max. číslo pre súboj</string>
+    <string name="fragment_menu_university">Technická univerzita v Rzeszowe</string>
+    <string name="battle_view_bonus">Postupný bonus +%d</string>
+    <string name="fragment_modes_instruction">Vyberte cvičenie zo zoznamu:</string>
+    <string name="fragment_modes_add_sub">Sčítanie a Odčítanie</string>
+    <string name="fragment_modes_mul_div">Násobenie a Delenie</string>
+    <string name="fragment_modes_divisibility">Deliteľnosť</string>
+    <string name="fragment_modes_units">Prevod jednotiek</string>
+    <string name="fragment_modes_table">Násobilka</string>
+    <string name="fragment_choose_player_instruction">Vyberte hráča zo zoznamu\nalebo vytvorte nového tlačidlom plus</string>
+    <string name="fragment_player_names_instruction">Zadajte prezývky hráčov</string>
+    <string name="fragment_player_names_nickname_1">Prezývka Hráča1 (hore):</string>
+    <string name="fragment_player_names_nickname_2">Prezývka Hráča2 (dole):</string>
+    <string name="fragment_player_names_start">Štart</string>
+    <string name="fragment_scoreboard_empty">Zoznam výsledkov je prázdny.\nHrajte v bojovom režime a uvidíte najlepšie výsledky!</string>
+    <string name="units_help_hint">Nápoveda</string>
+    <string name="settings_fragment_max_number">Hodnota nemôže byť väčšia ako: %1$d</string>
+    <string name="settings_fragment_min_number">Hodnota nemôže byť menšia ako: %1$d</string>
+    <string name="battle_game_ended">Hra skončila</string>
+    <string name="choose_player_input">Zadajte prezývku nového hráča:</string>
+    <string name="choose_player_nick_exist">Prezývka už existuje!</string>
+    <string name="divisibility_difficulty_1">Ľahké</string>
+    <string name="divisibility_difficulty_2">Stredné</string>
+    <string name="divisibility_difficulty_3">Ťažké</string>
+    <string name="divisibility_difficulty_4">Veľmi ťažké</string>
+    <string name="divisibility_question_p1">Je</string>
+    <string name="divisibility_question_p2">deliteľné</string>
+    <string name="units_time">Čas</string>
+    <string name="units_length">Dĺžka</string>
+    <string name="units_weight">Hmotnosť</string>
+    <string name="units_surface">Povrch</string>
+    <string name="units_all">Všetky</string>
+    <string name="time_units">d,h,min,sek</string>
+    <string name="question_mark">\?</string>
+    <string name="prz_url">https://w.prz.edu.pl/en/</string>
+    <string name="weii_url">https://weii.prz.edu.pl/en/</string>
+    <string name="menu_play">Cvičenia</string>
+    <string name="menu_settings">Nastavenia</string>
+    <string name="menu_pvp">Súboj</string>
+    <string name="menu_leaderboard">Rebríček</string>
+    
+    <!-- Player Selection Screen -->
+    <string name="no_players_yet">Zatiaľ žiadni hráči!</string>
+    <string name="create_first_player">Vytvorte svojho prvého hráča a začnite</string>
+    <string name="create_player">Vytvoriť hráča</string>
+    <string name="add_player">Pridať hráča</string>
+    <string name="nickname">Prezývka</string>
+    <string name="error_creating_player">Chyba pri vytváraní hráča</string>
+    <string name="high_score_games">Najvyššie skóre: %1$d | Hry: %2$d</string>
+    <string name="star">Hviezda</string>
+    
+    <!-- Game Screen -->
+    <string name="question_counter">Otázka %1$d / %2$d</string>
+    <string name="game_over">🎉 Koniec hry! 🎉</string>
+    <string name="result_excellent">Vynikajúce! 🌟</string>
+    <string name="result_great">Skvelá práca! 👍</string>
+    <string name="result_good">Dobrá snaha! 💪</string>
+    <string name="result_practice">Pokračujte v cvičení! 📚</string>
+    <string name="score_saved">Skóre uložené pre %1$s!</string>
+    <string name="play_again">Hrať znova</string>
+    <string name="check">SKONTROLOVAŤ ✓</string>
+    
+    <!-- PvP Battle Screen -->
+    <string name="back_to_menu">Späť do menu</string>
+    <string name="player_wins">%1$s vyhráva! 🏆</string>
+    <string name="its_a_tie">Remíza! 🤝</string>
+    <string name="round_counter">Kolo %1$d / %2$d</string>
+    <string name="both_correct">Obaja ✓</string>
+    <string name="both_wrong">Obaja ✗</string>
+    <string name="waiting">Čakanie...</string>
+    <string name="correct">✓ Správne!</string>
+    <string name="wrong">✗ Nesprávne</string>
+    <string name="answer_submitted">✓ Odpoveď odoslaná</string>
+    
+    <!-- Unit conversion -->
+    <string name="unit_hours">hodiny</string>
+    <string name="unit_minutes">minúty</string>
+    <string name="unit_seconds">sekundy</string>
+    <string name="unit_meters">metre</string>
+    <string name="unit_centimeters">centimetre</string>
+    <string name="unit_kilometers">kilometre</string>
+    <string name="unit_kilograms">kilogramy</string>
+    <string name="unit_grams">gramy</string>
+    <string name="unit_days">dni</string>
+    <string name="unit_conversion_question">%1$d %2$s = ? %3$s</string>
+    <string name="divisibility_question">Je %1$d deliteľné %2$d?</string>
+
+</resources>

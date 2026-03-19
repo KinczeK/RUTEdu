@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="ok">OK</string>
+    <string name="cancel">Annuler</string>
+    <string name="yes">Oui</string>
+    <string name="no">Non</string>
+    <string name="error">Erreur</string>
+    <string name="save">Enregistrer</string>
+    <string name="empty">Vide</string>
+    <string name="back">Retour</string>
+    <string name="scoreboard">Tableau des scores :</string>
+    <string name="player1">Joueur1</string>
+    <string name="player2">Joueur2</string>
+    <string name="score">Score :</string>
+    <string name="duel_score">%s score : %d\n%s score : %d</string>
+    <string name="scoreboard_format">%d. %s</string>
+    <string name="nick_empty">Le pseudo ne peut pas être vide !</string>
+    <string name="fragment_settings_select_language">Sélectionner la langue</string>
+    <string name="fragment_settings_max_number">Nombre max. pour le duel</string>
+    <string name="fragment_menu_university">Université de Technologie de Rzeszów</string>
+    <string name="battle_view_bonus">Bonus consécutif +%d</string>
+    <string name="fragment_modes_instruction">Sélectionnez un exercice dans la liste :</string>
+    <string name="fragment_modes_add_sub">Addition et Soustraction</string>
+    <string name="fragment_modes_mul_div">Multiplication et Division</string>
+    <string name="fragment_modes_divisibility">Divisibilité</string>
+    <string name="fragment_modes_units">Conversion d\'unités</string>
+    <string name="fragment_modes_table">Table de multiplication</string>
+    <string name="fragment_choose_player_instruction">Choisissez un joueur dans la liste\nou créez-en un nouveau avec le bouton plus</string>
+    <string name="fragment_player_names_instruction">Entrez les pseudos des joueurs</string>
+    <string name="fragment_player_names_nickname_1">Pseudo du Joueur1 (haut) :</string>
+    <string name="fragment_player_names_nickname_2">Pseudo du Joueur2 (bas) :</string>
+    <string name="fragment_player_names_start">Commencer</string>
+    <string name="fragment_scoreboard_empty">La liste des scores est vide.\nJouez en mode bataille pour voir les meilleurs résultats !</string>
+    <string name="units_help_hint">Indice</string>
+    <string name="settings_fragment_max_number">La valeur ne peut pas être supérieure à : %1$d</string>
+    <string name="settings_fragment_min_number">La valeur ne peut pas être inférieure à : %1$d</string>
+    <string name="battle_game_ended">Partie terminée</string>
+    <string name="choose_player_input">Entrez le pseudo du nouveau joueur :</string>
+    <string name="choose_player_nick_exist">Ce pseudo existe déjà !</string>
+    <string name="divisibility_difficulty_1">Facile</string>
+    <string name="divisibility_difficulty_2">Moyen</string>
+    <string name="divisibility_difficulty_3">Difficile</string>
+    <string name="divisibility_difficulty_4">Très difficile</string>
+    <string name="divisibility_question_p1">Est-ce que</string>
+    <string name="divisibility_question_p2">est divisible par</string>
+    <string name="units_time">Temps</string>
+    <string name="units_length">Longueur</string>
+    <string name="units_weight">Poids</string>
+    <string name="units_surface">Surface</string>
+    <string name="units_all">Tout</string>
+    <string name="time_units">j,h,min,sec</string>
+    <string name="question_mark">\?</string>
+    <string name="prz_url">https://w.prz.edu.pl/en/</string>
+    <string name="weii_url">https://weii.prz.edu.pl/en/</string>
+    <string name="menu_play">Exercices</string>
+    <string name="menu_settings">Paramètres</string>
+    <string name="menu_pvp">Bataille</string>
+    <string name="menu_leaderboard">Classement</string>
+    
+    <!-- Player Selection Screen -->
+    <string name="no_players_yet">Aucun joueur !</string>
+    <string name="create_first_player">Créez votre premier joueur pour commencer</string>
+    <string name="create_player">Créer un joueur</string>
+    <string name="add_player">Ajouter un joueur</string>
+    <string name="nickname">Pseudo</string>
+    <string name="error_creating_player">Erreur lors de la création du joueur</string>
+    <string name="high_score_games">Meilleur score : %1$d | Parties : %2$d</string>
+    <string name="star">Étoile</string>
+    
+    <!-- Game Screen -->
+    <string name="question_counter">Question %1$d / %2$d</string>
+    <string name="game_over">🎉 Partie terminée ! 🎉</string>
+    <string name="result_excellent">Excellent ! 🌟</string>
+    <string name="result_great">Très bien ! 👍</string>
+    <string name="result_good">Bon effort ! 💪</string>
+    <string name="result_practice">Continuez à pratiquer ! 📚</string>
+    <string name="score_saved">Score enregistré pour %1$s !</string>
+    <string name="play_again">Rejouer</string>
+    <string name="check">VÉRIFIER ✓</string>
+    
+    <!-- PvP Battle Screen -->
+    <string name="back_to_menu">Retour au menu</string>
+    <string name="player_wins">%1$s gagne ! 🏆</string>
+    <string name="its_a_tie">Match nul ! 🤝</string>
+    <string name="round_counter">Manche %1$d / %2$d</string>
+    <string name="both_correct">Les deux ✓</string>
+    <string name="both_wrong">Les deux ✗</string>
+    <string name="waiting">En attente...</string>
+    <string name="correct">✓ Correct !</string>
+    <string name="wrong">✗ Faux</string>
+    <string name="answer_submitted">✓ Réponse soumise</string>
+    
+    <!-- Unit conversion -->
+    <string name="unit_hours">heures</string>
+    <string name="unit_minutes">minutes</string>
+    <string name="unit_seconds">secondes</string>
+    <string name="unit_meters">mètres</string>
+    <string name="unit_centimeters">centimètres</string>
+    <string name="unit_kilometers">kilomètres</string>
+    <string name="unit_kilograms">kilogrammes</string>
+    <string name="unit_grams">grammes</string>
+    <string name="unit_days">jours</string>
+    <string name="unit_conversion_question">%1$d %2$s = ? %3$s</string>
+    <string name="divisibility_question">Est-ce que %1$d est divisible par %2$d ?</string>
+
+</resources>

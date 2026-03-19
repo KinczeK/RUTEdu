@@ -1,0 +1,145 @@
+CREATE TABLE hockeyPlayer (
+  player_number INTEGER PRIMARY KEY NOT NULL,
+  full_name TEXT NOT NULL
+);
+
+CREATE INDEX hockeyPlayer_full_name ON hockeyPlayer(full_name);
+
+INSERT INTO hockeyPlayer (player_number, full_name)
+VALUES (15, 'Ryan Getzlaf');
+
+selectAll:
+SELECT *
+FROM hockeyPlayer;
+
+insert:
+INSERT INTO hockeyPlayer(player_number, full_name)
+VALUES (?, ?);
+
+insertFullPlayerObject:
+INSERT INTO hockeyPlayer(player_number, full_name)
+VALUES ?;
+
+-- Settings table for app preferences
+CREATE TABLE appSettings (
+  setting_key TEXT PRIMARY KEY NOT NULL,
+  setting_value TEXT NOT NULL
+);
+
+-- Insert default language setting (English)
+INSERT OR IGNORE INTO appSettings (setting_key, setting_value)
+VALUES ('language', 'en');
+
+-- Get a setting by key
+getSetting:
+SELECT setting_value
+FROM appSettings
+WHERE setting_key = ?;
+
+-- Insert or update a setting
+upsertSetting:
+INSERT OR REPLACE INTO appSettings (setting_key, setting_value)
+VALUES (?, ?);
+
+-- Get the current language
+getLanguage:
+SELECT setting_value
+FROM appSettings
+WHERE setting_key = 'language';
+
+-- Set the language
+setLanguage:
+INSERT OR REPLACE INTO appSettings (setting_key, setting_value)
+VALUES ('language', ?);
+
+-- Players table for game players
+CREATE TABLE player (
+  id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
+  nickname TEXT UNIQUE NOT NULL,
+  high_score INTEGER NOT NULL DEFAULT 0,
+  games_played INTEGER NOT NULL DEFAULT 0,
+  created_at INTEGER NOT NULL DEFAULT (strftime('%s', 'now'))
+);
+
+-- Get all players
+getAllPlayers:
+SELECT * FROM player ORDER BY high_score DESC;
+
+-- Get player by id
+getPlayerById:
+SELECT * FROM player WHERE id = ?;
+
+-- Get player by nickname
+getPlayerByNickname:
+SELECT * FROM player WHERE nickname = ?;
+
+-- Create new player
+createPlayer:
+INSERT INTO player (nickname) VALUES (?);
+
+-- Update player score
+updatePlayerScore:
+UPDATE player SET high_score = ?, games_played = games_played + 1 WHERE id = ?;
+
+-- Delete player
+deletePlayer:
+DELETE FROM player WHERE id = ?;
+
+-- Get current player id from settings
+getCurrentPlayerId:
+SELECT setting_value FROM appSettings WHERE setting_key = 'current_player_id';
+
+-- Set current player id
+setCurrentPlayerId:
+INSERT OR REPLACE INTO appSettings (setting_key, setting_value) VALUES ('current_player_id', ?);
+
+-- Level Progress table for tracking player progress through levels
+CREATE TABLE IF NOT EXISTS levelProgress (
+    id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
+    player_id INTEGER NOT NULL,
+    game_mode TEXT NOT NULL,
+    level INTEGER NOT NULL,
+    completed INTEGER NOT NULL DEFAULT 0,
+    best_score INTEGER NOT NULL DEFAULT 0,
+    attempts INTEGER NOT NULL DEFAULT 0,
+    UNIQUE(player_id, game_mode, level)
+);
+
+-- Get level progress for a player and game mode
+getLevelProgress:
+SELECT * FROM levelProgress 
+WHERE player_id = ? AND game_mode = ? AND level = ?;
+
+-- Get all level progress for a player and game mode
+getAllLevelProgressForMode:
+SELECT * FROM levelProgress 
+WHERE player_id = ? AND game_mode = ?
+ORDER BY level ASC;
+
+-- Insert or update level progress
+upsertLevelProgress:
+INSERT OR REPLACE INTO levelProgress (player_id, game_mode, level, completed, best_score, attempts)
+VALUES (?, ?, ?, ?, ?, ?);
+
+-- Mark level as completed
+markLevelCompleted:
+UPDATE levelProgress 
+SET completed = 1, best_score = MAX(best_score, ?), attempts = attempts + 1
+WHERE player_id = ? AND game_mode = ? AND level = ?;
+
+-- Update level attempt (when not 100%) - insert if not exists
+insertLevelAttemptIfNotExists:
+INSERT OR IGNORE INTO levelProgress (player_id, game_mode, level, completed, best_score, attempts)
+VALUES (?, ?, ?, 0, 0, 0);
+
+-- Update level attempt - increment attempts and update best score if higher
+updateLevelAttemptScore:
+UPDATE levelProgress 
+SET best_score = MAX(best_score, ?), attempts = attempts + 1
+WHERE player_id = ? AND game_mode = ? AND level = ?;
+
+-- Check if previous level is completed (for unlocking)
+isPreviousLevelCompleted:
+SELECT completed FROM levelProgress 
+WHERE player_id = ? AND game_mode = ? AND level = ?;
+

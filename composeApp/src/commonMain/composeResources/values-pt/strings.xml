@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="ok">OK</string>
+    <string name="cancel">Cancelar</string>
+    <string name="yes">Sim</string>
+    <string name="no">Não</string>
+    <string name="error">Erro</string>
+    <string name="save">Guardar</string>
+    <string name="empty">Vazio</string>
+    <string name="back">Voltar</string>
+    <string name="scoreboard">Placar:</string>
+    <string name="player1">Jogador1</string>
+    <string name="player2">Jogador2</string>
+    <string name="score">Pontuação:</string>
+    <string name="duel_score">%s pontuação: %d\n%s pontuação: %d</string>
+    <string name="scoreboard_format">%d. %s</string>
+    <string name="nick_empty">O apelido não pode estar vazio!</string>
+    <string name="fragment_settings_select_language">Selecionar idioma</string>
+    <string name="fragment_settings_max_number">Número máx. para duelo</string>
+    <string name="fragment_menu_university">Universidade de Tecnologia de Rzeszów</string>
+    <string name="battle_view_bonus">Bónus sequencial +%d</string>
+    <string name="fragment_modes_instruction">Selecione um exercício da lista:</string>
+    <string name="fragment_modes_add_sub">Adição e Subtração</string>
+    <string name="fragment_modes_mul_div">Multiplicação e Divisão</string>
+    <string name="fragment_modes_divisibility">Divisibilidade</string>
+    <string name="fragment_modes_units">Conversão de unidades</string>
+    <string name="fragment_modes_table">Tabuada</string>
+    <string name="fragment_choose_player_instruction">Escolha um jogador da lista\nou crie um novo com o botão mais</string>
+    <string name="fragment_player_names_instruction">Introduza os apelidos dos jogadores</string>
+    <string name="fragment_player_names_nickname_1">Apelido do Jogador1 (topo):</string>
+    <string name="fragment_player_names_nickname_2">Apelido do Jogador2 (baixo):</string>
+    <string name="fragment_player_names_start">Começar</string>
+    <string name="fragment_scoreboard_empty">A lista de pontuações está vazia.\nJogue no modo batalha para ver os melhores resultados!</string>
+    <string name="units_help_hint">Dica</string>
+    <string name="settings_fragment_max_number">O valor não pode ser maior que: %1$d</string>
+    <string name="settings_fragment_min_number">O valor não pode ser menor que: %1$d</string>
+    <string name="battle_game_ended">Jogo terminado</string>
+    <string name="choose_player_input">Introduza o apelido do novo jogador:</string>
+    <string name="choose_player_nick_exist">O apelido já existe!</string>
+    <string name="divisibility_difficulty_1">Fácil</string>
+    <string name="divisibility_difficulty_2">Médio</string>
+    <string name="divisibility_difficulty_3">Difícil</string>
+    <string name="divisibility_difficulty_4">Muito Difícil</string>
+    <string name="divisibility_question_p1">É</string>
+    <string name="divisibility_question_p2">divisível por</string>
+    <string name="units_time">Tempo</string>
+    <string name="units_length">Comprimento</string>
+    <string name="units_weight">Peso</string>
+    <string name="units_surface">Superfície</string>
+    <string name="units_all">Todos</string>
+    <string name="time_units">d,h,min,seg</string>
+    <string name="question_mark">\?</string>
+    <string name="prz_url">https://w.prz.edu.pl/en/</string>
+    <string name="weii_url">https://weii.prz.edu.pl/en/</string>
+    <string name="menu_play">Exercícios</string>
+    <string name="menu_settings">Definições</string>
+    <string name="menu_pvp">Batalha</string>
+    <string name="menu_leaderboard">Classificação</string>
+    
+    <!-- Player Selection Screen -->
+    <string name="no_players_yet">Ainda não há jogadores!</string>
+    <string name="create_first_player">Crie o seu primeiro jogador para começar</string>
+    <string name="create_player">Criar Jogador</string>
+    <string name="add_player">Adicionar jogador</string>
+    <string name="nickname">Apelido</string>
+    <string name="error_creating_player">Erro ao criar jogador</string>
+    <string name="high_score_games">Melhor Pontuação: %1$d | Jogos: %2$d</string>
+    <string name="star">Estrela</string>
+    
+    <!-- Game Screen -->
+    <string name="question_counter">Pergunta %1$d / %2$d</string>
+    <string name="game_over">🎉 Fim do Jogo! 🎉</string>
+    <string name="result_excellent">Excelente! 🌟</string>
+    <string name="result_great">Muito bom! 👍</string>
+    <string name="result_good">Bom esforço! 💪</string>
+    <string name="result_practice">Continue a praticar! 📚</string>
+    <string name="score_saved">Pontuação guardada para %1$s!</string>
+    <string name="play_again">Jogar Novamente</string>
+    <string name="check">VERIFICAR ✓</string>
+    
+    <!-- PvP Battle Screen -->
+    <string name="back_to_menu">Voltar ao Menu</string>
+    <string name="player_wins">%1$s Vence! 🏆</string>
+    <string name="its_a_tie">Empate! 🤝</string>
+    <string name="round_counter">Ronda %1$d / %2$d</string>
+    <string name="both_correct">Ambos ✓</string>
+    <string name="both_wrong">Ambos ✗</string>
+    <string name="waiting">A aguardar...</string>
+    <string name="correct">✓ Correto!</string>
+    <string name="wrong">✗ Errado</string>
+    <string name="answer_submitted">✓ Resposta Enviada</string>
+    
+    <!-- Unit conversion -->
+    <string name="unit_hours">horas</string>
+    <string name="unit_minutes">minutos</string>
+    <string name="unit_seconds">segundos</string>
+    <string name="unit_meters">metros</string>
+    <string name="unit_centimeters">centímetros</string>
+    <string name="unit_kilometers">quilómetros</string>
+    <string name="unit_kilograms">quilogramas</string>
+    <string name="unit_grams">gramas</string>
+    <string name="unit_days">dias</string>
+    <string name="unit_conversion_question">%1$d %2$s = ? %3$s</string>
+    <string name="divisibility_question">%1$d é divisível por %2$d?</string>
+
+</resources>
