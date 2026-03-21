@@ -38,25 +38,25 @@ import com.example.myapplication.Database
 import kotlinx.coroutines.launch
 import kotlin.random.Random
 import org.jetbrains.compose.resources.stringResource
-import myapplication.composeapp.generated.resources.Res
-import myapplication.composeapp.generated.resources.fragment_modes_add_sub
-import myapplication.composeapp.generated.resources.fragment_modes_mul_div
-import myapplication.composeapp.generated.resources.fragment_modes_divisibility
-import myapplication.composeapp.generated.resources.fragment_modes_units
-import myapplication.composeapp.generated.resources.fragment_modes_table
-import myapplication.composeapp.generated.resources.question_counter
-import myapplication.composeapp.generated.resources.game_over
-import myapplication.composeapp.generated.resources.result_excellent
-import myapplication.composeapp.generated.resources.result_great
-import myapplication.composeapp.generated.resources.result_good
-import myapplication.composeapp.generated.resources.result_practice
-import myapplication.composeapp.generated.resources.score_saved
-import myapplication.composeapp.generated.resources.play_again
-import myapplication.composeapp.generated.resources.back
-import myapplication.composeapp.generated.resources.check
-import myapplication.composeapp.generated.resources.yes
-import myapplication.composeapp.generated.resources.no
-import myapplication.composeapp.generated.resources.divisibility_question
+import rutedu.composeapp.generated.resources.Res
+import rutedu.composeapp.generated.resources.fragment_modes_add_sub
+import rutedu.composeapp.generated.resources.fragment_modes_mul_div
+import rutedu.composeapp.generated.resources.fragment_modes_divisibility
+import rutedu.composeapp.generated.resources.fragment_modes_units
+import rutedu.composeapp.generated.resources.fragment_modes_table
+import rutedu.composeapp.generated.resources.question_counter
+import rutedu.composeapp.generated.resources.game_over
+import rutedu.composeapp.generated.resources.result_excellent
+import rutedu.composeapp.generated.resources.result_great
+import rutedu.composeapp.generated.resources.result_good
+import rutedu.composeapp.generated.resources.result_practice
+import rutedu.composeapp.generated.resources.score_saved
+import rutedu.composeapp.generated.resources.play_again
+import rutedu.composeapp.generated.resources.back
+import rutedu.composeapp.generated.resources.check
+import rutedu.composeapp.generated.resources.yes
+import rutedu.composeapp.generated.resources.no
+import rutedu.composeapp.generated.resources.divisibility_question
 
 // Game modes enum
 enum class GameMode {

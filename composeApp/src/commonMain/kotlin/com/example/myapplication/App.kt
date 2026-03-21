@@ -43,9 +43,9 @@ import com.example.myapplication.screens.SubjectConfigScreen
 import com.example.myapplication.screens.SubjectDetailScreen
 import com.example.myapplication.screens.LessonGameScreen
 import com.example.myapplication.screens.TopicDetailScreen
-import myapplication.composeapp.generated.resources.Res
-import myapplication.composeapp.generated.resources.player1
-import myapplication.composeapp.generated.resources.player2
+import rutedu.composeapp.generated.resources.Res
+import rutedu.composeapp.generated.resources.player1
+import rutedu.composeapp.generated.resources.player2
 import org.jetbrains.compose.resources.stringResource
 import org.jetbrains.compose.ui.tooling.preview.Preview
 

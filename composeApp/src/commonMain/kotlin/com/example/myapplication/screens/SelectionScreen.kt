@@ -19,17 +19,17 @@ import androidx.navigation.NavController
 
 import com.example.myapplication.Screen
 import com.example.myapplication.components.MenuButton
-import myapplication.composeapp.generated.resources.Res
-import myapplication.composeapp.generated.resources.ic_add_sub
-import myapplication.composeapp.generated.resources.ic_mult_div
-import myapplication.composeapp.generated.resources.ic_dumbbell_solid
-import myapplication.composeapp.generated.resources.fragment_modes_instruction
-import myapplication.composeapp.generated.resources.fragment_modes_add_sub
-import myapplication.composeapp.generated.resources.fragment_modes_mul_div
-import myapplication.composeapp.generated.resources.fragment_modes_divisibility
-import myapplication.composeapp.generated.resources.fragment_modes_units
-import myapplication.composeapp.generated.resources.fragment_modes_table
-import myapplication.composeapp.generated.resources.back
+import rutedu.composeapp.generated.resources.Res
+import rutedu.composeapp.generated.resources.ic_add_sub
+import rutedu.composeapp.generated.resources.ic_mult_div
+import rutedu.composeapp.generated.resources.ic_dumbbell_solid
+import rutedu.composeapp.generated.resources.fragment_modes_instruction
+import rutedu.composeapp.generated.resources.fragment_modes_add_sub
+import rutedu.composeapp.generated.resources.fragment_modes_mul_div
+import rutedu.composeapp.generated.resources.fragment_modes_divisibility
+import rutedu.composeapp.generated.resources.fragment_modes_units
+import rutedu.composeapp.generated.resources.fragment_modes_table
+import rutedu.composeapp.generated.resources.back
 import org.jetbrains.compose.resources.stringResource
 
 @Composable

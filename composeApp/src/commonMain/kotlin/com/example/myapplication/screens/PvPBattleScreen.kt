@@ -38,24 +38,22 @@ import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import kotlinx.coroutines.delay
 import org.jetbrains.compose.resources.stringResource
-import myapplication.composeapp.generated.resources.Res
-import myapplication.composeapp.generated.resources.player1
-import myapplication.composeapp.generated.resources.player2
-import myapplication.composeapp.generated.resources.battle_game_ended
-import myapplication.composeapp.generated.resources.yes
-import myapplication.composeapp.generated.resources.no
-import myapplication.composeapp.generated.resources.play_again
-import myapplication.composeapp.generated.resources.back_to_menu
-import myapplication.composeapp.generated.resources.player_wins
-import myapplication.composeapp.generated.resources.its_a_tie
-import myapplication.composeapp.generated.resources.round_counter
-import myapplication.composeapp.generated.resources.both_correct
-import myapplication.composeapp.generated.resources.both_wrong
-import myapplication.composeapp.generated.resources.waiting
-import myapplication.composeapp.generated.resources.correct
-import myapplication.composeapp.generated.resources.wrong
-import myapplication.composeapp.generated.resources.answer_submitted
-import myapplication.composeapp.generated.resources.check
+import rutedu.composeapp.generated.resources.Res
+import rutedu.composeapp.generated.resources.battle_game_ended
+import rutedu.composeapp.generated.resources.yes
+import rutedu.composeapp.generated.resources.no
+import rutedu.composeapp.generated.resources.play_again
+import rutedu.composeapp.generated.resources.back_to_menu
+import rutedu.composeapp.generated.resources.player_wins
+import rutedu.composeapp.generated.resources.its_a_tie
+import rutedu.composeapp.generated.resources.round_counter
+import rutedu.composeapp.generated.resources.both_correct
+import rutedu.composeapp.generated.resources.both_wrong
+import rutedu.composeapp.generated.resources.waiting
+import rutedu.composeapp.generated.resources.correct
+import rutedu.composeapp.generated.resources.wrong
+import rutedu.composeapp.generated.resources.answer_submitted
+import rutedu.composeapp.generated.resources.check
 
 data class PvPQuestion(
     val question: String,

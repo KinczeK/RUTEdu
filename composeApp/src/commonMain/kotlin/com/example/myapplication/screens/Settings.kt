@@ -35,10 +35,10 @@ import androidx.navigation.NavController
 import com.example.myapplication.Database
 import com.example.myapplication.locale.customAppLocale
 import kotlinx.coroutines.launch
-import myapplication.composeapp.generated.resources.Res
-import myapplication.composeapp.generated.resources.menu_settings
-import myapplication.composeapp.generated.resources.fragment_settings_select_language
-import myapplication.composeapp.generated.resources.back
+import rutedu.composeapp.generated.resources.Res
+import rutedu.composeapp.generated.resources.menu_settings
+import rutedu.composeapp.generated.resources.fragment_settings_select_language
+import rutedu.composeapp.generated.resources.back
 import org.jetbrains.compose.resources.stringResource
 
 data class LanguageOption(
