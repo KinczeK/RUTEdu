@@ -96,6 +96,12 @@ dependencies {
     debugImplementation(compose.uiTooling)
 }
 
+configurations.all {
+    resolutionStrategy {
+        force("androidx.savedstate:savedstate:1.2.1")
+    }
+}
+
 sqldelight {
     databases {
         create("Database") {

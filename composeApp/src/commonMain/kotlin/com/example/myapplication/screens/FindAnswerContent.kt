@@ -14,6 +14,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.compose.material3.Text
 import androidx.compose.ui.text.font.FontWeight
+import com.example.myapplication.components.NumberKeypad
 import com.example.myapplication.models.Question
 
 @Composable
@@ -87,7 +88,7 @@ internal fun FindAnswerContent(
 
         Spacer(modifier = Modifier.weight(1f))
 
-        Numpad(
+        NumberKeypad(
             onDigit = { d -> isWrong = false; if (input.length < 6) input += d },
             onClear = { input = ""; isWrong = false },
             onBackspace = { if (input.isNotEmpty()) input = input.dropLast(1); isWrong = false }

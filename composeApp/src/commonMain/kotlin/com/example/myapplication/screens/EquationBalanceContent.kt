@@ -8,6 +8,7 @@ import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.Text
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
@@ -19,6 +20,7 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.example.myapplication.components.NumberKeypad
 import com.example.myapplication.models.Question
 
 @Composable
@@ -47,17 +49,21 @@ internal fun EquationBalanceContent(
 
     val allFilled = blankPositions.all { (pos, _) -> inputs[pos]?.isNotEmpty() == true }
 
-    fun advanceToNext(currentPos: Int) {
-        val nextIdx = blankPositions.indexOfFirst { it.first == currentPos } + 1
-        if (nextIdx < blankPositions.size) activePos = blankPositions[nextIdx].first
-    }
-
     if (showHint) {
         HintBottomSheet(hint = question.hint, accentColor = accentColor, onDismiss = { showHint = false })
     }
 
-    Column(modifier = Modifier.fillMaxSize().padding(bottom = bottomPadding)) {
-        Column(modifier = Modifier.weight(1f)) {
+    Column(
+        modifier = Modifier.fillMaxSize().padding(bottom = bottomPadding),
+        horizontalAlignment = Alignment.CenterHorizontally
+    ) {
+        // Scrollable top area — instruction + equation
+        Column(
+            modifier = Modifier
+                .weight(1f)
+                .verticalScroll(rememberScrollState()),
+            horizontalAlignment = Alignment.CenterHorizontally
+        ) {
             Spacer(Modifier.height(24.dp))
 
             Text(
@@ -85,14 +91,15 @@ internal fun EquationBalanceContent(
                     .padding(horizontal = 16.dp)
                     .clip(RoundedCornerShape(20.dp))
                     .background(Color.White)
-                    .border(1.dp, Color(0xFFE8EAF0), RoundedCornerShape(20.dp))
+                    .border(1.dp, Color(0xFFE8EAF0), RoundedCornerShape(20.dp)),
+                contentAlignment = Alignment.Center
             ) {
                 Row(
                     modifier = Modifier
                         .horizontalScroll(rememberScrollState())
                         .padding(horizontal = 20.dp, vertical = 24.dp),
                     verticalAlignment = Alignment.CenterVertically,
-                    horizontalArrangement = Arrangement.spacedBy(8.dp)
+                    horizontalArrangement = Arrangement.Center
                 ) {
                     question.reactants.forEachIndexed { i, term ->
                         if (i > 0) Text("+", fontSize = 20.sp, fontWeight = FontWeight.Medium, color = Color(0xFF1A1A1A))
@@ -108,7 +115,9 @@ internal fun EquationBalanceContent(
                         )
                     }
 
+                    Spacer(Modifier.width(8.dp))
                     Text("→", fontSize = 22.sp, fontWeight = FontWeight.Bold, color = Color(0xFF1A1A1A))
+                    Spacer(Modifier.width(8.dp))
 
                     question.products.forEachIndexed { i, term ->
                         if (i > 0) Text("+", fontSize = 20.sp, fontWeight = FontWeight.Medium, color = Color(0xFF1A1A1A))
@@ -125,32 +134,31 @@ internal fun EquationBalanceContent(
                     }
                 }
             }
-        }
 
-        Spacer(Modifier.height(16.dp))
+            Spacer(Modifier.height(16.dp))
 
-        Numpad(
-            onDigit = { digit ->
-                if (activePos >= 0) {
-                    val current = inputs[activePos] ?: ""
-                    if (current.length < 2) {
-                        val updated = current + digit
-                        inputs = inputs + (activePos to updated)
-                        if (updated.isNotEmpty()) advanceToNext(activePos)
+            NumberKeypad(
+                onDigit = { digit ->
+                    if (activePos >= 0) {
+                        val current = inputs[activePos] ?: ""
+                        if (current.length < 2) {
+                            inputs = inputs + (activePos to current + digit)
+                        }
+                    }
+                },
+                onClear = { if (activePos >= 0) inputs = inputs + (activePos to "") },
+                onBackspace = {
+                    if (activePos >= 0) {
+                        val current = inputs[activePos] ?: ""
+                        inputs = inputs + (activePos to current.dropLast(1))
                     }
                 }
-            },
-            onClear = { if (activePos >= 0) inputs = inputs + (activePos to "") },
-            onBackspace = {
-                if (activePos >= 0) {
-                    val current = inputs[activePos] ?: ""
-                    inputs = inputs + (activePos to current.dropLast(1))
-                }
-            }
-        )
+            )
 
-        Spacer(Modifier.height(16.dp))
+            Spacer(Modifier.height(16.dp))
+        }
 
+        // Przycisk zawsze widoczny na dole
         BottomButtons(
             accentColor = accentColor,
             onHint = { showHint = true },
