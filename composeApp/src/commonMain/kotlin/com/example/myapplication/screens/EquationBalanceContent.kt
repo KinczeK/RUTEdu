@@ -57,70 +57,72 @@ internal fun EquationBalanceContent(
     }
 
     Column(modifier = Modifier.fillMaxSize().padding(bottom = bottomPadding)) {
-        Spacer(Modifier.height(24.dp))
+        Column(modifier = Modifier.weight(1f)) {
+            Spacer(Modifier.height(24.dp))
 
-        Text(
-            text = question.instruction,
-            fontSize = 20.sp,
-            fontWeight = FontWeight.Bold,
-            color = Color(0xFF1A1A1A),
-            textAlign = TextAlign.Center,
-            modifier = Modifier.fillMaxWidth().padding(horizontal = 24.dp)
-        )
-        Spacer(Modifier.height(4.dp))
-        Text(
-            text = question.subInstruction,
-            fontSize = 13.sp,
-            color = Color(0xFF9E9E9E),
-            textAlign = TextAlign.Center,
-            modifier = Modifier.fillMaxWidth().padding(horizontal = 24.dp)
-        )
+            Text(
+                text = question.instruction,
+                fontSize = 20.sp,
+                fontWeight = FontWeight.Bold,
+                color = Color(0xFF1A1A1A),
+                textAlign = TextAlign.Center,
+                modifier = Modifier.fillMaxWidth().padding(horizontal = 24.dp)
+            )
+            Spacer(Modifier.height(4.dp))
+            Text(
+                text = question.subInstruction,
+                fontSize = 13.sp,
+                color = Color(0xFF9E9E9E),
+                textAlign = TextAlign.Center,
+                modifier = Modifier.fillMaxWidth().padding(horizontal = 24.dp)
+            )
 
-        Spacer(Modifier.height(20.dp))
+            Spacer(Modifier.height(20.dp))
 
-        Box(
-            modifier = Modifier
-                .fillMaxWidth()
-                .padding(horizontal = 16.dp)
-                .clip(RoundedCornerShape(20.dp))
-                .background(Color.White)
-                .border(1.dp, Color(0xFFE8EAF0), RoundedCornerShape(20.dp))
-        ) {
-            Row(
+            Box(
                 modifier = Modifier
-                    .horizontalScroll(rememberScrollState())
-                    .padding(horizontal = 20.dp, vertical = 24.dp),
-                verticalAlignment = Alignment.CenterVertically,
-                horizontalArrangement = Arrangement.spacedBy(8.dp)
+                    .fillMaxWidth()
+                    .padding(horizontal = 16.dp)
+                    .clip(RoundedCornerShape(20.dp))
+                    .background(Color.White)
+                    .border(1.dp, Color(0xFFE8EAF0), RoundedCornerShape(20.dp))
             ) {
-                question.reactants.forEachIndexed { i, term ->
-                    if (i > 0) Text("+", fontSize = 20.sp, fontWeight = FontWeight.Medium, color = Color(0xFF1A1A1A))
-                    val pos = i
-                    EquationTermCell(
-                        formula = term.formula,
-                        coefficient = if (term.fixedCoefficient == null) inputs[pos] ?: "" else term.fixedCoefficient.toString(),
-                        isBlank = term.fixedCoefficient == null,
-                        isActive = pos == activePos,
-                        isWrong = isWrong && term.fixedCoefficient == null,
-                        accentColor = accentColor,
-                        onClick = if (term.fixedCoefficient == null) { { activePos = pos; isWrong = false } } else null
-                    )
-                }
+                Row(
+                    modifier = Modifier
+                        .horizontalScroll(rememberScrollState())
+                        .padding(horizontal = 20.dp, vertical = 24.dp),
+                    verticalAlignment = Alignment.CenterVertically,
+                    horizontalArrangement = Arrangement.spacedBy(8.dp)
+                ) {
+                    question.reactants.forEachIndexed { i, term ->
+                        if (i > 0) Text("+", fontSize = 20.sp, fontWeight = FontWeight.Medium, color = Color(0xFF1A1A1A))
+                        val pos = i
+                        EquationTermCell(
+                            formula = term.formula,
+                            coefficient = if (term.fixedCoefficient == null) inputs[pos] ?: "" else term.fixedCoefficient.toString(),
+                            isBlank = term.fixedCoefficient == null,
+                            isActive = pos == activePos,
+                            isWrong = isWrong && term.fixedCoefficient == null,
+                            accentColor = accentColor,
+                            onClick = if (term.fixedCoefficient == null) { { activePos = pos; isWrong = false } } else null
+                        )
+                    }
 
-                Text("→", fontSize = 22.sp, fontWeight = FontWeight.Bold, color = Color(0xFF1A1A1A))
+                    Text("→", fontSize = 22.sp, fontWeight = FontWeight.Bold, color = Color(0xFF1A1A1A))
 
-                question.products.forEachIndexed { i, term ->
-                    if (i > 0) Text("+", fontSize = 20.sp, fontWeight = FontWeight.Medium, color = Color(0xFF1A1A1A))
-                    val pos = question.reactants.size + i
-                    EquationTermCell(
-                        formula = term.formula,
-                        coefficient = if (term.fixedCoefficient == null) inputs[pos] ?: "" else term.fixedCoefficient.toString(),
-                        isBlank = term.fixedCoefficient == null,
-                        isActive = pos == activePos,
-                        isWrong = isWrong && term.fixedCoefficient == null,
-                        accentColor = accentColor,
-                        onClick = if (term.fixedCoefficient == null) { { activePos = pos; isWrong = false } } else null
-                    )
+                    question.products.forEachIndexed { i, term ->
+                        if (i > 0) Text("+", fontSize = 20.sp, fontWeight = FontWeight.Medium, color = Color(0xFF1A1A1A))
+                        val pos = question.reactants.size + i
+                        EquationTermCell(
+                            formula = term.formula,
+                            coefficient = if (term.fixedCoefficient == null) inputs[pos] ?: "" else term.fixedCoefficient.toString(),
+                            isBlank = term.fixedCoefficient == null,
+                            isActive = pos == activePos,
+                            isWrong = isWrong && term.fixedCoefficient == null,
+                            accentColor = accentColor,
+                            onClick = if (term.fixedCoefficient == null) { { activePos = pos; isWrong = false } } else null
+                        )
+                    }
                 }
             }
         }
@@ -153,7 +155,7 @@ internal fun EquationBalanceContent(
             accentColor = accentColor,
             onHint = { showHint = true },
             onCheck = {
-                if (blankPositions.all { (pos, correct) -> inputs[pos]?.toIntOrNull() == correct }) onCorrect()
+                if (isAnswerCorrect(question, inputs)) onCorrect()
                 else isWrong = true
             },
             checkEnabled = allFilled
@@ -211,4 +213,33 @@ internal fun EquationTermCell(
         }
         Text(text = formula, fontSize = 17.sp, fontWeight = FontWeight.SemiBold, color = Color(0xFF1A1A1A))
     }
+}
+
+private fun isAnswerCorrect(question: Question.EquationBalance, inputs: Map<Int, String>): Boolean {
+    // Build list of (userValue, correctValue) for all terms.
+    // Fixed terms use their fixedCoefficient as both user and correct value.
+    // Blank terms use the user's input and the correctCoefficient.
+    val allTerms = buildList {
+        question.reactants.forEachIndexed { i, t ->
+            val userVal = t.fixedCoefficient ?: inputs[i]?.toIntOrNull() ?: return false
+            val correctVal = t.fixedCoefficient ?: (t.correctCoefficient ?: 1)
+            add(userVal to correctVal)
+        }
+        val offset = question.reactants.size
+        question.products.forEachIndexed { i, t ->
+            val userVal = t.fixedCoefficient ?: inputs[offset + i]?.toIntOrNull() ?: return false
+            val correctVal = t.fixedCoefficient ?: (t.correctCoefficient ?: 1)
+            add(userVal to correctVal)
+        }
+    }
+
+    if (allTerms.isEmpty()) return false
+
+    // Determine the multiplier k from the first term.
+    val (firstUser, firstCorrect) = allTerms.first()
+    if (firstUser <= 0 || firstUser % firstCorrect != 0) return false
+    val k = firstUser / firstCorrect
+
+    // All terms must satisfy userValue == correctValue * k.
+    return allTerms.all { (user, correct) -> user == correct * k }
 }
