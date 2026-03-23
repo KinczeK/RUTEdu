@@ -245,6 +245,12 @@ fun LessonGameScreen(
                     bottomPadding = bottomPadding,
                     onCorrect = onAnsweredCorrectly
                 )
+                is Question.ElementCardQuiz -> ElementCardContent(
+                    question = question,
+                    accentColor = accentColor,
+                    bottomPadding = bottomPadding,
+                    onCorrect = onAnsweredCorrectly
+                )
                 is Question.GraphTypeAnswer -> GraphTypeAnswerContent(
                     question = question,
                     accentColor = accentColor,

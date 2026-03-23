@@ -19,6 +19,7 @@ import com.example.myapplication.models.Question.PeriodicTableByName
 import com.example.myapplication.models.Question.TypeAnswer
 import com.example.myapplication.models.Question.EquationBalance
 import com.example.myapplication.models.Question.BalanceTerm
+import com.example.myapplication.models.Question.ElementCardQuiz
 import com.example.myapplication.models.Question.GraphTypeAnswer
 import com.example.myapplication.models.Question.GraphSelectFromList
 import com.example.myapplication.math.MathShape
@@ -638,6 +639,82 @@ object QuestionBank {
             Hint("Srebro (Ag) leży w gr. 11, okres 5."))
     )
 
+    // ── chemia_1_4  Elektrony w atomach ──────────────────────────────────────
+    private val chemia_1_4: List<Question> = listOf(
+        ElementCardQuiz(0,
+            prompt = "Ile elektronów posiada atom Tlenu?",
+            atomicNumber = 8,
+            options = listOf("6", "8", "10", "16"),
+            correctIndex = 1,
+            hint = Hint("Dla obojętnego atomu: liczba elektronów = liczba atomowa Z.",
+                boldPart = "liczba atomowa Z",
+                steps = listOf("Z tlenu = 8", "Elektron. = 8"))),
+        ElementCardQuiz(1,
+            prompt = "Ile elektronów posiada atom Sodu?",
+            atomicNumber = 11,
+            options = listOf("9", "10", "11", "23"),
+            correctIndex = 2,
+            hint = Hint("Dla obojętnego atomu: elektrony = liczba atomowa.",
+                steps = listOf("Z sodu = 11", "Elektron. = 11"))),
+        ElementCardQuiz(2,
+            prompt = "Ile elektronów posiada atom Węgla?",
+            atomicNumber = 6,
+            options = listOf("4", "6", "8", "12"),
+            correctIndex = 1,
+            hint = Hint("Policz elektrony z konfiguracji: [He] 2s² 2p².",
+                steps = listOf("He = 2 elektr.", "2s² = 2", "2p² = 2", "Razem: 6"))),
+        ElementCardQuiz(3,
+            prompt = "Ile protonów posiada atom Magnezu?",
+            atomicNumber = 12,
+            options = listOf("10", "12", "24", "16"),
+            correctIndex = 1,
+            hint = Hint("Liczba protonów = liczba atomowa = Z.",
+                steps = listOf("Z magnezu = 12", "Protonów = 12"))),
+        ElementCardQuiz(4,
+            prompt = "Ile elektronów posiada atom Azotu?",
+            atomicNumber = 7,
+            options = listOf("5", "6", "7", "9"),
+            correctIndex = 2,
+            hint = Hint("Konfiguracja azotu: [He] 2s² 2p³.",
+                steps = listOf("He = 2", "2s² = 2", "2p³ = 3", "Razem: 7"))),
+        ElementCardQuiz(5,
+            prompt = "Ile elektronów posiada atom Fluoru?",
+            atomicNumber = 9,
+            options = listOf("7", "8", "9", "17"),
+            correctIndex = 2,
+            hint = Hint("Fluor Z = 9 → 9 elektronów.",
+                steps = listOf("Z fluoru = 9", "Elektron. = 9"))),
+        ElementCardQuiz(6,
+            prompt = "Ile elektronów posiada atom Wapnia?",
+            atomicNumber = 20,
+            options = listOf("18", "20", "22", "40"),
+            correctIndex = 1,
+            hint = Hint("Masa atomowa (40) ≠ liczba elektronów (20).",
+                boldPart = "liczba elektronów",
+                steps = listOf("Z wapnia = 20", "Elektron. = 20"))),
+        ElementCardQuiz(7,
+            prompt = "Ile elektronów posiada atom Siarki?",
+            atomicNumber = 16,
+            options = listOf("14", "16", "18", "32"),
+            correctIndex = 1,
+            hint = Hint("Siarka: Z = 16 → 16 elektronów.",
+                steps = listOf("Z siarki = 16", "Elektron. = 16"))),
+        ElementCardQuiz(8,
+            prompt = "Ile elektronów posiada atom Helu?",
+            atomicNumber = 2,
+            options = listOf("1", "2", "3", "4"),
+            correctIndex = 1,
+            hint = Hint("Hel ma najprostszą konfigurację: 1s².",
+                steps = listOf("1s² = 2 elektrony"))),
+        ElementCardQuiz(9,
+            prompt = "Ile elektronów posiada atom Potasu?",
+            atomicNumber = 19,
+            options = listOf("17", "18", "19", "39"),
+            correctIndex = 2,
+            hint = Hint("Z potasu = 19 → 19 elektronów.",
+                steps = listOf("Z = 19", "Elektron. = 19")))
+    )
+
     // ── chemia_2_1  Układ okresowy – umieść brakujące pierwiastki ────────────
     // Each question removes 5 elements from the table; student places them back.
     private val chemia_2_1: List<Question> = listOf(
@@ -1000,6 +1077,7 @@ object QuestionBank {
         "mat_5_1" to mat_5_1,
         "chemia_1_1" to chemia_1_1,
         "chemia_1_2" to chemia_1_2,
+        "chemia_1_4" to chemia_1_4,
         "chemia_2_1" to chemia_2_1,
         "chemia_3_1" to chemia_3_1,
         "chemia_3_2" to chemia_3_2,

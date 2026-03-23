@@ -253,6 +253,15 @@ object SubjectRepository {
                             icon = Icons.Default.Bolt
                         ),
                         Lesson(
+                            id = "chemia_1_4",
+                            name = "Elektrony w atomach",
+                            description = "Ile elektronów ma dany pierwiastek?",
+                            progress = 0.0f,
+                            isLocked = false,
+                            color = Color(0xFF3DBD7D),
+                            icon = Icons.Default.Science
+                        ),
+                        Lesson(
                             id = "chemia_1_3",
                             name = "Cząsteczki i wzory",
                             description = "Wzory sumaryczne i strukturalne",

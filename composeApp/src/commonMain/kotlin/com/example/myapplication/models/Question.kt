@@ -153,6 +153,20 @@ sealed class Question(open val id: Int) {
     )
 
     /**
+     * Shows an element card (symbol, name, mass, config, group) and asks the user
+     * to pick one of four options arranged in a 2×2 grid.
+     */
+    data class ElementCardQuiz(
+        override val id: Int,
+        val prompt: String,
+        val subtitle: String = "Wybierz poprawną odpowiedź na podstawie karty pierwiastka.",
+        val atomicNumber: Int,
+        val options: List<String>,
+        val correctIndex: Int,
+        val hint: Hint = Hint("")
+    ) : Question(id)
+
+    /**
      * Shows a [MathCanvas] visual and asks the user to type a numeric answer.
      * Designed for function evaluation (f(x)=…) and geometric calculations.
      */
