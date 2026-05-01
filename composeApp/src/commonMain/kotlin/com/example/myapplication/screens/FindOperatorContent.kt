@@ -40,6 +40,7 @@ internal fun FindOperatorContent(
     accentColor: Color,
     bottomPadding: Dp,
     onCorrect: () -> Unit,
+    onWrong: () -> Unit = {},
     onSkip: () -> Unit
 ) {
     var selectedOperator by remember(question.id) { mutableStateOf<MathOperator?>(null) }
@@ -252,7 +253,7 @@ internal fun FindOperatorContent(
                 onHint = { showHint = true },
                 onCheck = {
                     if (selectedOperator == question.correctOperator) onCorrect()
-                    else isWrong = true
+                    else onWrong()
                 },
                 checkEnabled = selectedOperator != null
             )

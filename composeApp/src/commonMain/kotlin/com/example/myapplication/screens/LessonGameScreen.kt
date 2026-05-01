@@ -111,7 +111,10 @@ fun LessonGameScreen(
     val displayQuestion = (currentIndex + 1).coerceAtMost(totalCount)
     val headerProgress = if (totalCount > 0) displayQuestion.toFloat() / totalCount else 0f
 
-    val onAnsweredCorrectly: () -> Unit = {
+    var feedbackState by remember { mutableStateOf(FeedbackState.NONE) }
+
+    val advanceQuestion: () -> Unit = {
+        feedbackState = FeedbackState.NONE
         val newCorrect = correctCount + 1
         correctCount = newCorrect
         if (currentIndex < totalCount - 1) {
@@ -124,6 +127,9 @@ fun LessonGameScreen(
             LessonProgressStore.save(driver, lessonId, LessonProgressStore.Progress(totalCount, newCorrect, totalCount))
         }
     }
+
+    val onAnsweredCorrectly: () -> Unit = { feedbackState = FeedbackState.CORRECT }
+    val onWrongAnswer: () -> Unit = { feedbackState = FeedbackState.WRONG }
 
     Column(
         modifier = Modifier
@@ -194,6 +200,7 @@ fun LessonGameScreen(
                     accentColor = accentColor,
                     bottomPadding = bottomPadding,
                     onCorrect = onAnsweredCorrectly,
+                    onWrong = onWrongAnswer,
                     onSkip = { if (currentIndex < totalCount - 1) currentIndex++ }
                 )
                 is Question.FindOperator -> FindOperatorContent(
@@ -201,69 +208,86 @@ fun LessonGameScreen(
                     accentColor = accentColor,
                     bottomPadding = bottomPadding,
                     onCorrect = onAnsweredCorrectly,
+                    onWrong = onWrongAnswer,
                     onSkip = { if (currentIndex < totalCount - 1) currentIndex++ }
                 )
                 is Question.SelectFromList -> SelectFromListContent(
                     question = question,
                     accentColor = accentColor,
                     bottomPadding = bottomPadding,
-                    onCorrect = onAnsweredCorrectly
+                    onCorrect = onAnsweredCorrectly,
+                    onWrong = onWrongAnswer
                 )
                 is Question.TypeAnswer -> TypeAnswerContent(
                     question = question,
                     accentColor = accentColor,
                     bottomPadding = bottomPadding,
-                    onCorrect = onAnsweredCorrectly
+                    onCorrect = onAnsweredCorrectly,
+                    onWrong = onWrongAnswer
                 )
                 is Question.MapQuiz -> MapQuizContent(
                     question = question,
                     accentColor = accentColor,
                     bottomPadding = bottomPadding,
-                    onCorrect = onAnsweredCorrectly
+                    onCorrect = onAnsweredCorrectly,
+                    onWrong = onWrongAnswer
                 )
                 is Question.PeriodicTableQuiz -> PeriodicTableContent(
                     question = question,
                     accentColor = accentColor,
                     bottomPadding = bottomPadding,
-                    onCorrect = onAnsweredCorrectly
+                    onCorrect = onAnsweredCorrectly,
+                    onWrong = onWrongAnswer
                 )
                 is Question.PeriodicTableByShell -> PeriodicTableByShellContent(
                     question = question,
                     accentColor = accentColor,
                     bottomPadding = bottomPadding,
-                    onCorrect = onAnsweredCorrectly
+                    onCorrect = onAnsweredCorrectly,
+                    onWrong = onWrongAnswer
                 )
                 is Question.PeriodicTableByName -> PeriodicTableByNameContent(
                     question = question,
                     accentColor = accentColor,
                     bottomPadding = bottomPadding,
-                    onCorrect = onAnsweredCorrectly
+                    onCorrect = onAnsweredCorrectly,
+                    onWrong = onWrongAnswer
                 )
                 is Question.EquationBalance -> EquationBalanceContent(
                     question = question,
                     accentColor = accentColor,
                     bottomPadding = bottomPadding,
-                    onCorrect = onAnsweredCorrectly
+                    onCorrect = onAnsweredCorrectly,
+                    onWrong = onWrongAnswer
                 )
                 is Question.ElementCardQuiz -> ElementCardContent(
                     question = question,
                     accentColor = accentColor,
                     bottomPadding = bottomPadding,
-                    onCorrect = onAnsweredCorrectly
+                    onCorrect = onAnsweredCorrectly,
+                    onWrong = onWrongAnswer
                 )
                 is Question.GraphTypeAnswer -> GraphTypeAnswerContent(
                     question = question,
                     accentColor = accentColor,
                     bottomPadding = bottomPadding,
-                    onCorrect = onAnsweredCorrectly
+                    onCorrect = onAnsweredCorrectly,
+                    onWrong = onWrongAnswer
                 )
                 is Question.GraphSelectFromList -> GraphSelectFromListContent(
                     question = question,
                     accentColor = accentColor,
                     bottomPadding = bottomPadding,
-                    onCorrect = onAnsweredCorrectly
+                    onCorrect = onAnsweredCorrectly,
+                    onWrong = onWrongAnswer
                 )
             }
+            AnswerFeedbackOverlay(
+                state = feedbackState,
+                accentColor = accentColor,
+                onCorrectDismiss = advanceQuestion,
+                onWrongDismiss = { feedbackState = FeedbackState.NONE }
+            )
         }
     }
 }

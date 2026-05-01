@@ -66,7 +66,8 @@ fun PeriodicTableContent(
     question: Question.PeriodicTableQuiz,
     accentColor: Color,
     bottomPadding: Dp,
-    onCorrect: () -> Unit
+    onCorrect: () -> Unit,
+    onWrong: () -> Unit = {}
 ) {
     // slotContents: slot's correct atomicNumber → which element was placed there
     val slotContents = remember(question.id) { mutableStateMapOf<Int, Int>() }
@@ -209,7 +210,10 @@ fun PeriodicTableContent(
                     Button(
                         onClick = {
                             if (allSlotsFilled && checkResult == null) {
-                                checkResult = slotContents.mapValues { (slot, placed) -> slot == placed }
+                                val cr = slotContents.mapValues { (slot, placed) -> slot == placed }
+                                checkResult = cr
+                                if (!cr.all { it.value }) onWrong()
+
                             }
                         },
                         enabled = allSlotsFilled && checkResult == null,
@@ -614,7 +618,8 @@ fun PeriodicTableByShellContent(
     question: Question.PeriodicTableByShell,
     accentColor: Color,
     bottomPadding: Dp,
-    onCorrect: () -> Unit
+    onCorrect: () -> Unit,
+    onWrong: () -> Unit = {}
 ) {
     PeriodicTableFindContent(
         topLabel = "CHEMIA",
@@ -639,7 +644,8 @@ fun PeriodicTableByShellContent(
         hint = question.hint,
         accentColor = accentColor,
         bottomPadding = bottomPadding,
-        onCorrect = onCorrect
+        onCorrect = onCorrect,
+        onWrong = onWrong
     )
 }
 
@@ -651,7 +657,8 @@ fun PeriodicTableByNameContent(
     question: Question.PeriodicTableByName,
     accentColor: Color,
     bottomPadding: Dp,
-    onCorrect: () -> Unit
+    onCorrect: () -> Unit,
+    onWrong: () -> Unit = {}
 ) {
     PeriodicTableFindContent(
         topLabel = "CHEMIA",
@@ -669,7 +676,8 @@ fun PeriodicTableByNameContent(
         hint = question.hint,
         accentColor = accentColor,
         bottomPadding = bottomPadding,
-        onCorrect = onCorrect
+        onCorrect = onCorrect,
+        onWrong = onWrong
     )
 }
 
@@ -685,7 +693,8 @@ private fun PeriodicTableFindContent(
     hint: Hint,
     accentColor: Color,
     bottomPadding: Dp,
-    onCorrect: () -> Unit
+    onCorrect: () -> Unit,
+    onWrong: () -> Unit = {}
 ) {
     // Keyed by targetAtomicNumber so state resets with each new question
     var selectedElement by remember(targetAtomicNumber) { mutableStateOf<Int?>(null) }
@@ -802,6 +811,8 @@ private fun PeriodicTableFindContent(
                         if (sel != null) {
                             checkState = if (sel == targetAtomicNumber) FindCheckState.CORRECT
                                          else FindCheckState.WRONG
+                            if (sel != targetAtomicNumber) onWrong()
+
                         }
                     },
                     enabled = selectedElement != null && checkState == FindCheckState.IDLE,

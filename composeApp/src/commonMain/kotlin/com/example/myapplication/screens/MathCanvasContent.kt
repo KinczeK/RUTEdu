@@ -39,7 +39,8 @@ internal fun GraphTypeAnswerContent(
     question: Question.GraphTypeAnswer,
     accentColor: Color,
     bottomPadding: Dp,
-    onCorrect: () -> Unit
+    onCorrect: () -> Unit,
+    onWrong: () -> Unit = {}
 ) {
     var input    by remember(question.id) { mutableStateOf("") }
     var isWrong  by remember(question.id) { mutableStateOf(false) }
@@ -133,7 +134,7 @@ internal fun GraphTypeAnswerContent(
                 ),
                 keyboardActions = KeyboardActions(onDone = {
                     if (input.toIntOrNull() == question.correctAnswer) onCorrect()
-                    else isWrong = true
+                    else onWrong()
                 }),
                 colors = TextFieldDefaults.colors(
                     focusedContainerColor = Color.Transparent,
@@ -189,7 +190,7 @@ internal fun GraphTypeAnswerContent(
             onHint = { showHint = true },
             onCheck = {
                 if (input.toIntOrNull() == question.correctAnswer) onCorrect()
-                else isWrong = true
+                else onWrong()
             },
             checkEnabled = input.isNotEmpty()
         )
@@ -206,7 +207,8 @@ internal fun GraphSelectFromListContent(
     question: Question.GraphSelectFromList,
     accentColor: Color,
     bottomPadding: Dp,
-    onCorrect: () -> Unit
+    onCorrect: () -> Unit,
+    onWrong: () -> Unit = {}
 ) {
     var selected by remember(question.id) { mutableStateOf(emptySet<Int>()) }
     var isWrong  by remember(question.id) { mutableStateOf(false) }
@@ -308,7 +310,7 @@ internal fun GraphSelectFromListContent(
             onHint = { showHint = true },
             onCheck = {
                 if (selected == question.correctIndices) onCorrect()
-                else isWrong = true
+                else onWrong()
             },
             checkEnabled = selected.isNotEmpty()
         )

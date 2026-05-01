@@ -28,7 +28,8 @@ internal fun SelectFromListContent(
     question: Question.SelectFromList,
     accentColor: Color,
     bottomPadding: Dp,
-    onCorrect: () -> Unit
+    onCorrect: () -> Unit,
+    onWrong: () -> Unit = {}
 ) {
     var selected by remember(question.id) { mutableStateOf(emptySet<Int>()) }
     var isWrong by remember(question.id) { mutableStateOf(false) }
@@ -138,7 +139,7 @@ internal fun SelectFromListContent(
             onHint = { showHint = true },
             onCheck = {
                 if (selected == question.correctIndices) onCorrect()
-                else isWrong = true
+                else onWrong()
             },
             checkEnabled = selected.isNotEmpty()
         )

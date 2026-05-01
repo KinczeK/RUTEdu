@@ -38,7 +38,8 @@ internal fun TypeAnswerContent(
     question: Question.TypeAnswer,
     accentColor: Color,
     bottomPadding: Dp,
-    onCorrect: () -> Unit
+    onCorrect: () -> Unit,
+    onWrong: () -> Unit = {}
 ) {
     var input by remember(question.id) { mutableStateOf("") }
     var isWrong by remember(question.id) { mutableStateOf(false) }
@@ -132,7 +133,7 @@ internal fun TypeAnswerContent(
                 ),
                 keyboardActions = KeyboardActions(onDone = {
                     if (input.toIntOrNull() == question.correctAnswer) onCorrect()
-                    else isWrong = true
+                    else onWrong()
                 }),
                 colors = androidx.compose.material3.TextFieldDefaults.colors(
                     focusedContainerColor = Color.Transparent,
@@ -193,7 +194,7 @@ internal fun TypeAnswerContent(
             onHint = { showHint = true },
             onCheck = {
                 if (input.toIntOrNull() == question.correctAnswer) onCorrect()
-                else isWrong = true
+                else onWrong()
             },
             checkEnabled = input.isNotEmpty()
         )

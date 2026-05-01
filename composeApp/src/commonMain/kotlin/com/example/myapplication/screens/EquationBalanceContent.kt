@@ -28,7 +28,8 @@ internal fun EquationBalanceContent(
     question: Question.EquationBalance,
     accentColor: Color,
     bottomPadding: Dp,
-    onCorrect: () -> Unit
+    onCorrect: () -> Unit,
+    onWrong: () -> Unit = {}
 ) {
     val blankPositions = remember(question.id) {
         buildList {
@@ -164,7 +165,7 @@ internal fun EquationBalanceContent(
             onHint = { showHint = true },
             onCheck = {
                 if (isAnswerCorrect(question, inputs)) onCorrect()
-                else isWrong = true
+                else onWrong()
             },
             checkEnabled = allFilled
         )

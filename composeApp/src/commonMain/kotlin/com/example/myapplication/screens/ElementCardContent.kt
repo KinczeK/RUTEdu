@@ -37,7 +37,8 @@ internal fun ElementCardContent(
     question: Question.ElementCardQuiz,
     accentColor: Color,
     bottomPadding: Dp,
-    onCorrect: () -> Unit
+    onCorrect: () -> Unit,
+    onWrong: () -> Unit = {}
 ) {
     val element = remember(question.atomicNumber) {
         ELEMENTS.find { it.atomicNumber == question.atomicNumber }
@@ -214,7 +215,7 @@ internal fun ElementCardContent(
             onHint = { showHint = true },
             onCheck = {
                 if (selectedIndex == question.correctIndex) onCorrect()
-                else isWrong = true
+                else onWrong()
             },
             checkEnabled = selectedIndex != null
         )

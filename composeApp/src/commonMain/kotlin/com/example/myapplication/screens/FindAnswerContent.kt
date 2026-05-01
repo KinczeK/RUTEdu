@@ -23,6 +23,7 @@ internal fun FindAnswerContent(
     accentColor: Color,
     bottomPadding: Dp,
     onCorrect: () -> Unit,
+    onWrong: () -> Unit = {},
     onSkip: () -> Unit
 ) {
     var input by remember(question.id) { mutableStateOf("") }
@@ -101,7 +102,7 @@ internal fun FindAnswerContent(
             onHint = { showHint = true },
             onCheck = {
                 if (input.toIntOrNull() == question.correctAnswer) onCorrect()
-                else isWrong = true
+                else onWrong()
             },
             checkEnabled = input.isNotEmpty()
         )

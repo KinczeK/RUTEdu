@@ -126,7 +126,8 @@ internal fun MapQuizContent(
     question: Question.MapQuiz,
     accentColor: Color,
     bottomPadding: Dp,
-    onCorrect: () -> Unit
+    onCorrect: () -> Unit,
+    onWrong: () -> Unit = {}
 ) {
     // ── State ─────────────────────────────────────────────────────────────────
     var countries    by remember { mutableStateOf<List<CountryFeature>>(emptyList()) }
@@ -298,7 +299,7 @@ internal fun MapQuizContent(
             Button(
                 onClick = {
                     if (selectedCountry == question.countryKey) onCorrect()
-                    else isWrong = true
+                    else onWrong()
                 },
                 modifier = Modifier.weight(1f).height(52.dp),
                 shape = RoundedCornerShape(26.dp),
