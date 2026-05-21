@@ -1,0 +1,11 @@
+RUTEdu is an interactive educational app for high school students, developed at PRZ (Rzeszów University of Technology).
+
+Features:
+* Interactive periodic table of all 118 elements
+* Chemistry quizzes with automatic question generator
+* Chemical equation balancing with number keypad
+* Geography quiz with interactive map (click-a-country)
+* Local multiplayer mode over WiFi (1v1 and tournament)
+* Progress tracking per player profile
+
+No ads, no tracking, no internet required (except map quiz).

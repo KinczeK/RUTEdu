@@ -1,0 +1,26 @@
+Categories:
+  - Education
+
+License: MIT
+
+WebSite: https://github.com/RUTEdu-Team/RUTEdu
+SourceCode: https://github.com/RUTEdu-Team/RUTEdu
+IssueTracker: https://github.com/RUTEdu-Team/RUTEdu/issues
+
+AutoName: RUTEdu
+
+RepoType: git
+Repo: https://github.com/RUTEdu-Team/RUTEdu
+
+Builds:
+  - versionName: '0.4'
+    versionCode: 400
+    commit: v0.4
+    subdir: composeApp
+    gradle:
+      - release
+
+AutoUpdateMode: Version v%v
+UpdateCheckMode: Tags ^v[0-9]+\.[0-9]+(\.[0-9]+)?$
+CurrentVersion: '0.4'
+CurrentVersionCode: 400
