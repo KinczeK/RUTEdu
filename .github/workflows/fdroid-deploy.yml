@@ -63,9 +63,8 @@ jobs:
 
       - name: Install fdroidserver
         run: |
-          sudo add-apt-repository ppa:fdroid/fdroidserver -y
-          sudo apt-get update -qq
-          sudo apt-get install -y fdroidserver
+          sudo apt-get install -y python3-pip
+          pip install fdroidserver
 
       - name: Checkout fdroid branch
         uses: actions/checkout@v4
