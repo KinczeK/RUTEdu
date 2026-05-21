@@ -85,7 +85,9 @@ jobs:
         working-directory: fdroid-repo
         env:
           FDROID_KEY_PASSWORD: ${{ secrets.FDROID_KEY_PASSWORD }}
-        run: fdroid update --create-metadata --verbose
+        run: |
+          find repo -name '.gitkeep' -delete
+          fdroid update --create-metadata --verbose
 
       - name: Deploy to fdroid branch
         working-directory: fdroid-repo
