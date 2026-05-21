@@ -84,27 +84,12 @@ jobs:
           FDROID_KEYSTORE_BASE64: ${{ secrets.FDROID_KEYSTORE_BASE64 }}
         run: echo "$FDROID_KEYSTORE_BASE64" | base64 --decode > fdroid-repo/keystore.jks
 
-      - name: Diagnose keystore
-        working-directory: fdroid-repo
-        env:
-          FDROID_KEY_STORE_PASS: ${{ secrets.FDROID_KEY_PASSWORD }}
-        run: |
-          echo "=== keystore file ==="
-          ls -la keystore.jks || echo "MISSING"
-          echo "=== keytool list ==="
-          /usr/lib/jvm/default-java/bin/keytool -list \
-            -keystore keystore.jks \
-            -storepass:env FDROID_KEY_STORE_PASS 2>&1 || echo "EXIT $?"
-          echo "=== config.yml ==="
-          cat config.yml
-
       - name: Update F-Droid index
         working-directory: fdroid-repo
         env:
-          FDROID_KEY_STORE_PASS: ${{ secrets.FDROID_KEY_PASSWORD }}
+          FDROID_KEY_PASSWORD: ${{ secrets.FDROID_KEY_PASSWORD }}
         run: |
           find repo -name '.gitkeep' -delete
-          sed -i 's/env:FDROID_KEY_PASSWORD/env:FDROID_KEY_STORE_PASS/g' config.yml
           chmod 0600 config.yml
           fdroid update --create-metadata --verbose
 
