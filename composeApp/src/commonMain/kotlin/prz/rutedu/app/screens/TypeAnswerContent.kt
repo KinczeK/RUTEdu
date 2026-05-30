@@ -162,7 +162,8 @@ internal fun TypeAnswerContent(
             androidx.compose.material3.TextField(
                 value = input,
                 onValueChange = { v ->
-                    if (v.all { it.isDigit() } && v.length <= 4) {
+                    val isPossibleInt = v.isEmpty() || v == "-" || v.toIntOrNull() != null
+                    if (isPossibleInt && v.length <= 5) {
                         input = v
                         isWrong = false
                     }
