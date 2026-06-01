@@ -21,6 +21,21 @@ import androidx.compose.ui.unit.sp
 import prz.rutedu.app.models.Question
 import prz.rutedu.app.theme.isAppInDarkTheme
 
+/**
+ * Question content for [Question.ComparisonQuiz] - compares two mathematical expressions using <, >, or =.
+ *
+ * Renders the comparison expressions on either side of a middle selector. The student selects
+ * the correct comparison operator ("<", "=", ">") from [SymbolSelector] in the middle.
+ *
+ * All state (`selectedSymbol`, `isWrong`, `showHint`) is keyed on `question.id` so it resets automatically
+ * when the game advances.
+ *
+ * @param question      The question details: prompt, left/right expressions, correct symbol, and hint.
+ * @param accentColor   Subject accent color.
+ * @param bottomPadding System navigation bar height padding.
+ * @param onCorrect     Called when the selected symbol matches [Question.ComparisonQuiz.correctSymbol].
+ * @param onWrong       Called when an incorrect symbol is checked.
+ */
 @Composable
 internal fun ComparisonQuizContent(
     question: Question.ComparisonQuiz,
@@ -94,6 +109,11 @@ internal fun ComparisonQuizContent(
     }
 }
 
+/**
+ * Renders a single term (left or right side expression) inside a styled box.
+ *
+ * @param expr The expression string to display.
+ */
 @Composable
 private fun ComparisonTerm(expr: String) {
     Box(
@@ -112,6 +132,16 @@ private fun ComparisonTerm(expr: String) {
     }
 }
 
+/**
+ * A vertical column containing interactive selector buttons for the comparison symbols "<", "=", and ">".
+ *
+ * Highlight colors are updated dynamically if a selection is made or if the checked answer is incorrect.
+ *
+ * @param selectedSymbol The currently selected symbol ("<", "=", or ">"), or `null` if none.
+ * @param onSelect       Callback triggered when a symbol is clicked.
+ * @param accentColor    Subject accent color used for borders/highlights.
+ * @param isWrong        Whether the current selection was marked incorrect during validation.
+ */
 @Composable
 private fun SymbolSelector(
     selectedSymbol: String?,

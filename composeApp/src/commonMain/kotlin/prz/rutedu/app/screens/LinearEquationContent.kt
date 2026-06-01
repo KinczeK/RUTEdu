@@ -53,6 +53,19 @@ import prz.rutedu.app.models.Question
 import prz.rutedu.app.theme.isAppInDarkTheme
 
 
+/**
+ * Question content for [Question.LinearEquation] - the student solves a single linear equation for x.
+ *
+ * Prompts the student with the equation and parses the answer. The student can type the raw solution value
+ * (e.g. `5` or `1/2`) or prefix it with `x=`. Validation utilizes [MathEngine] in a background coroutine
+ * to solve the equation and match the calculated value against the student's entry.
+ *
+ * @param question      The question details: equation, display equation format, and hint.
+ * @param accentColor   Subject accent color.
+ * @param bottomPadding System navigation bar height padding.
+ * @param onCorrect     Called when the user solution matches the correct calculated solution.
+ * @param onWrong       Called when the solution checked is incorrect.
+ */
 @Composable
 internal fun LinearEquationContent(
     question: Question.LinearEquation,
@@ -79,6 +92,12 @@ internal fun LinearEquationContent(
         )
     }
 
+    /**
+     * Normalizes the user's input string by trimming space, forcing lowercase, and removing optional `x=` prefixes.
+     *
+     * @param input Raw text inputted by the user.
+     * @return Normalized string containing only the solution value.
+     */
     fun normalizeLinearAnswer(input: String): String {
         return input
             .trim()
@@ -94,6 +113,12 @@ internal fun LinearEquationContent(
             }
     }
 
+    /**
+     * Parses a string representing a number, resolving integer, decimal, or fraction formats (e.g. `1/2`).
+     *
+     * @param input Normalized text input.
+     * @return Parsed [Double] value, or `null` if the input is in an invalid format.
+     */
     fun parseToNumber(input: String): Double? {
         return try {
             when {

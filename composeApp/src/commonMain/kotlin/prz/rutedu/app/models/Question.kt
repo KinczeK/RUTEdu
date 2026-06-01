@@ -72,6 +72,14 @@ enum class MapRegion(
 }
 
 
+/**
+ * Converts an integer to its Unicode subscript representation.
+ *
+ * Used for formatting chemical formulas containing subscript indices (e.g. H₂O).
+ *
+ * @param int The integer to convert.
+ * @return A string containing the subscript digits.
+ */
 fun getBottomIndex(int: Int): String {
     val map = mapOf(
         '0' to '₀',
@@ -92,6 +100,14 @@ fun getBottomIndex(int: Int): String {
         .joinToString("")
 }
 
+/**
+ * Converts an integer to its Unicode superscript representation.
+ *
+ * Used for formatting exponents or power symbols (e.g. x²).
+ *
+ * @param int The integer to convert.
+ * @return A string containing the superscript digits.
+ */
 fun getTopIndex(int: Int): String {
     val map = mapOf(
         '0' to '⁰',
@@ -112,6 +128,15 @@ fun getTopIndex(int: Int): String {
         .joinToString("")
 }
 
+/**
+ * Represents a mathematical equation with left-hand and right-hand expressions.
+ *
+ * Used primarily for representing systems of equations where multiple equation instances
+ * are presented and solved together.
+ *
+ * @property left  The left-hand side of the equation.
+ * @property right The right-hand side of the equation.
+ */
 data class Equation(
     val left: String,
     val right: String
@@ -178,12 +203,33 @@ sealed class Question(open val id: Int) {
         }
     }
 
+    /**
+     * The student must simplify or factorize an algebraic expression.
+     *
+     * The equivalence of the student's input is evaluated mathematically using [MathEngine].
+     *
+     * Rendered by `FactorizationContent`.
+     *
+     * @property id         Unique integer identifier within the lesson.
+     * @property expression The algebraic expression to be simplified or factorized.
+     * @property hint       Hint shown when the student taps "Podpowiedź".
+     */
     data class Factorization(
         override val id: Int,
         val expression: String,
         val hint: Hint = Hint("")
     ) : Question(id)
 
+    /**
+     * The student must solve a single linear equation for the variable x.
+     *
+     * Rendered by `LinearEquationContent`.
+     *
+     * @property id              Unique integer identifier within the lesson.
+     * @property equation        The equation formula in standard mathematical format used for parsing.
+     * @property equationDisplay The human-readable string version of the equation shown to the user.
+     * @property hint            Hint shown when the student taps "Podpowiedź".
+     */
     data class LinearEquation(
         override val id: Int,
         val equation: String,
@@ -191,6 +237,16 @@ sealed class Question(open val id: Int) {
         val hint: Hint = Hint("")
     ) : Question(id)
 
+    /**
+     * The student must solve a system of linear equations for multiple variables.
+     *
+     * Rendered by `SystemOfEquationsContent`.
+     *
+     * @property id        Unique integer identifier within the lesson.
+     * @property equations The list of [Equation] instances comprising the system.
+     * @property variables The list of variable names to solve for (e.g. `["x", "y"]`).
+     * @property hint      Hint shown when the student taps "Podpowiedź".
+     */
     data class SystemOfEquations(
         override val id: Int,
         val equations: List<Equation>,
@@ -512,6 +568,14 @@ sealed class Question(open val id: Int) {
      * The student must provide a fraction (numerator and denominator).
      *
      * Rendered by `FractionAnswerContent`.
+     *
+     * @property id                 Unique integer identifier within the lesson.
+     * @property prompt             The question prompt text.
+     * @property correctNumerator   The expected numerator value of the correct fraction.
+     * @property correctDenominator The expected denominator value of the correct fraction.
+     * @property labelBefore        Optional label text shown to the left of the fraction inputs.
+     * @property inlineHint         Short persistent tip shown permanently below the input fields.
+     * @property hint               Full hint shown in the bottom sheet.
      */
     data class FractionAnswer(
         override val id: Int,
@@ -527,6 +591,14 @@ sealed class Question(open val id: Int) {
      * The student must provide a decimal number (e.g. 0.25).
      *
      * Rendered by `DecimalAnswerContent`.
+     *
+     * @property id            Unique integer identifier within the lesson.
+     * @property prompt        The question prompt text.
+     * @property correctAnswer The expected decimal value of the correct answer.
+     * @property precision     The number of decimal places to check for closeness.
+     * @property labelBefore   Optional label text shown to the left of the decimal input field.
+     * @property inlineHint    Short persistent tip shown permanently below the input field.
+     * @property hint          Full hint shown in the bottom sheet.
      */
     data class DecimalAnswer(
         override val id: Int,
@@ -542,6 +614,13 @@ sealed class Question(open val id: Int) {
      * The student compares two mathematical expressions using <, > or =.
      *
      * Rendered by `ComparisonQuizContent`.
+     *
+     * @property id            Unique integer identifier within the lesson.
+     * @property prompt        The question prompt text.
+     * @property leftExpr      The expression shown on the left side of the comparison.
+     * @property rightExpr     The expression shown on the right side of the comparison.
+     * @property correctSymbol The expected correct operator symbol: `"<"`, `">"`, or `"="`.
+     * @property hint          Full hint shown in the bottom sheet.
      */
     data class ComparisonQuiz(
         override val id: Int,
