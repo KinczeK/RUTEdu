@@ -935,6 +935,48 @@ object SubjectRepository {
                             icon = Icons.Default.Timeline
                         )
                     )
+                ),
+                Topic(
+                    id = "mat_roz_8",
+                    name = "Logarytmy (Rozszerzenie)",
+                    description = "Własności, równania i zmiana podstawy",
+                    progress = 0.0f,
+                    isLocked = false,
+                    color = Color(0xFF00BFA6),
+                    icon = Icons.Default.Functions,
+                    lessons = listOf(
+                        Lesson(id = "mat_roz_8_1", name = "Wzory na logarytmy", description = "Dodawanie i odejmowanie logarytmów", progress = 0.0f, isLocked = false, color = Color(0xFF00BFA6), icon = Icons.Default.Add),
+                        Lesson(id = "mat_roz_8_2", name = "Równania logarytmiczne", description = "Rozwiązywanie prostych równań z log", progress = 0.0f, isLocked = false, color = Color(0xFF00BFA6), icon = Icons.Default.Calculate),
+                        Lesson(id = "mat_roz_8_3", name = "Logarytm potęgi", description = "Wyrzucanie potęgi przed logarytm", progress = 0.0f, isLocked = false, color = Color(0xFF00BFA6), icon = Icons.AutoMirrored.Filled.TrendingUp)
+                    )
+                ),
+                Topic(
+                    id = "mat_roz_9",
+                    name = "Wartość bezwzględna",
+                    description = "Równania, nierówności i odległości",
+                    progress = 0.0f,
+                    isLocked = false,
+                    color = Color(0xFFFFB300),
+                    icon = Icons.AutoMirrored.Filled.CompareArrows,
+                    lessons = listOf(
+                        Lesson(id = "mat_roz_9_1", name = "Równania z modułem", description = "Rozwiązywanie |x - a| = b", progress = 0.0f, isLocked = false, color = Color(0xFFFFB300), icon = Icons.Default.Functions),
+                        Lesson(id = "mat_roz_9_2", name = "Nierówności z modułem", description = "Rozwiązywanie |x - a| < b", progress = 0.0f, isLocked = false, color = Color(0xFFFFB300), icon = Icons.Default.BarChart),
+                        Lesson(id = "mat_roz_9_3", name = "Odległość na osi", description = "Interpretacja geometryczna", progress = 0.0f, isLocked = false, color = Color(0xFFFFB300), icon = Icons.Default.Straighten)
+                    )
+                ),
+                Topic(
+                    id = "mat_roz_10",
+                    name = "Stereometria (Bryły)",
+                    description = "Graniastosłupy, ostrosłupy i ich objętości",
+                    progress = 0.0f,
+                    isLocked = false,
+                    color = Color(0xFF42A5F5),
+                    icon = Icons.Default.ViewInAr,
+                    lessons = listOf(
+                        Lesson(id = "mat_roz_10_1", name = "Przekątne sześcianu", description = "Długości przekątnych ścian i bryły", progress = 0.0f, isLocked = false, color = Color(0xFF42A5F5), icon = Icons.Default.Straighten),
+                        Lesson(id = "mat_roz_10_2", name = "Objętość graniastosłupa", description = "V = Pp * H na prostych liczbach", progress = 0.0f, isLocked = false, color = Color(0xFF42A5F5), icon = Icons.Default.Layers),
+                        Lesson(id = "mat_roz_10_3", name = "Objętość ostrosłupa", description = "V = 1/3 * Pp * H", progress = 0.0f, isLocked = false, color = Color(0xFF42A5F5), icon = Icons.Default.ChangeHistory)
+                    )
                 )
             )
         ),
