@@ -651,6 +651,295 @@ object SubjectRepository {
         ),
 
         /**
+         * **Extended Mathematics Subject**
+         *
+         * Compact matura-extended track:
+         * - Funkcje i przekształcenia
+         * - Wielomiany i funkcje wymierne
+         * - Trygonometria
+         * - Geometria analityczna
+         * - Ciągi i granice
+         * - Kombinatoryka i prawdopodobieństwo
+         * - Pochodne i optymalizacja
+         */
+        Subject(
+            id = "matematyka_rozszerzona",
+            name = "Matematyka rozszerzona",
+            progress = 0.0f,
+            color = Color(0xFFE53935),
+            backgroundColor = Color(0xFFFFEBEE),
+            icon = Icons.Default.Functions,
+            topics = listOf(
+                Topic(
+                    id = "mat_roz_1",
+                    name = "Funkcje i przekształcenia",
+                    description = "Parametry, wykresy i wartość bezwzględna",
+                    progress = 0.0f,
+                    isLocked = false,
+                    color = Color(0xFFE53935),
+                    icon = Icons.AutoMirrored.Filled.TrendingUp,
+                    lessons = listOf(
+                        Lesson(
+                            id = "mat_roz_1_1",
+                            name = "Funkcje z parametrem",
+                            description = "Obliczanie wartości funkcji i wpływ parametrów",
+                            progress = 0.0f,
+                            isLocked = false,
+                            color = Color(0xFFE53935),
+                            icon = Icons.Default.Functions
+                        ),
+                        Lesson(
+                            id = "mat_roz_1_2",
+                            name = "Przekształcenia wykresów",
+                            description = "Przesunięcia i odczytywanie wierzchołka",
+                            progress = 0.0f,
+                            isLocked = false,
+                            color = Color(0xFFE53935),
+                            icon = Icons.Default.Timeline
+                        ),
+                        Lesson(
+                            id = "mat_roz_1_3",
+                            name = "Wartość bezwzględna funkcji",
+                            description = "Moduł w zapisie funkcji i jego interpretacja",
+                            progress = 0.0f,
+                            isLocked = false,
+                            color = Color(0xFFE53935),
+                            icon = Icons.AutoMirrored.Filled.CompareArrows
+                        )
+                    )
+                ),
+                Topic(
+                    id = "mat_roz_2",
+                    name = "Wielomiany i funkcje wymierne",
+                    description = "Rozkład, równania i asymptoty",
+                    progress = 0.0f,
+                    isLocked = false,
+                    color = Color(0xFFAB47BC),
+                    icon = Icons.Default.Functions,
+                    lessons = listOf(
+                        Lesson(
+                            id = "mat_roz_2_1",
+                            name = "Rozkład wielomianów",
+                            description = "Rozkład trójmianów na czynniki",
+                            progress = 0.0f,
+                            isLocked = false,
+                            color = Color(0xFFAB47BC),
+                            icon = Icons.Default.Expand
+                        ),
+                        Lesson(
+                            id = "mat_roz_2_2",
+                            name = "Równania wielomianowe",
+                            description = "Pierwiastki i postać iloczynowa",
+                            progress = 0.0f,
+                            isLocked = false,
+                            color = Color(0xFFAB47BC),
+                            icon = Icons.Default.Calculate
+                        ),
+                        Lesson(
+                            id = "mat_roz_2_3",
+                            name = "Funkcje wymierne",
+                            description = "Dziedzina i asymptoty prostych przykładów",
+                            progress = 0.0f,
+                            isLocked = false,
+                            color = Color(0xFFAB47BC),
+                            icon = Icons.Default.Timeline
+                        )
+                    )
+                ),
+                Topic(
+                    id = "mat_roz_3",
+                    name = "Trygonometria",
+                    description = "Tożsamości, równania i wykresy",
+                    progress = 0.0f,
+                    isLocked = false,
+                    color = Color(0xFFF47B20),
+                    icon = Icons.Default.ChangeHistory,
+                    lessons = listOf(
+                        Lesson(
+                            id = "mat_roz_3_1",
+                            name = "Tożsamości trygonometryczne",
+                            description = "Podstawowe zależności między sin, cos i tg",
+                            progress = 0.0f,
+                            isLocked = false,
+                            color = Color(0xFFF47B20),
+                            icon = Icons.Default.ChangeHistory
+                        ),
+                        Lesson(
+                            id = "mat_roz_3_2",
+                            name = "Równania trygonometryczne",
+                            description = "Proste rozwiązania w przedziale od 0 do 2π",
+                            progress = 0.0f,
+                            isLocked = false,
+                            color = Color(0xFFF47B20),
+                            icon = Icons.Default.Calculate
+                        ),
+                        Lesson(
+                            id = "mat_roz_3_3",
+                            name = "Wykresy sin i cos",
+                            description = "Rozpoznawanie podstawowych wykresów",
+                            progress = 0.0f,
+                            isLocked = false,
+                            color = Color(0xFFF47B20),
+                            icon = Icons.Default.Timeline
+                        )
+                    )
+                ),
+                Topic(
+                    id = "mat_roz_4",
+                    name = "Geometria analityczna",
+                    description = "Proste, okręgi, odległości i wektory",
+                    progress = 0.0f,
+                    isLocked = false,
+                    color = Color(0xFF26C6DA),
+                    icon = Icons.Default.Timeline,
+                    lessons = listOf(
+                        Lesson(
+                            id = "mat_roz_4_1",
+                            name = "Prosta i okrąg",
+                            description = "Współczynnik kierunkowy i promień okręgu",
+                            progress = 0.0f,
+                            isLocked = false,
+                            color = Color(0xFF26C6DA),
+                            icon = Icons.Default.Timeline
+                        ),
+                        Lesson(
+                            id = "mat_roz_4_2",
+                            name = "Odległość punktu od prostej",
+                            description = "Ćwiczenia dla prostych pionowych i poziomych",
+                            progress = 0.0f,
+                            isLocked = false,
+                            color = Color(0xFF26C6DA),
+                            icon = Icons.Default.Straighten
+                        ),
+                        Lesson(
+                            id = "mat_roz_4_3",
+                            name = "Wektory na płaszczyźnie",
+                            description = "Dodawanie wektorów współrzędna po współrzędnej",
+                            progress = 0.0f,
+                            isLocked = false,
+                            color = Color(0xFF26C6DA),
+                            icon = Icons.Default.Explore
+                        )
+                    )
+                ),
+                Topic(
+                    id = "mat_roz_5",
+                    name = "Ciągi i granice",
+                    description = "Ciągi arytmetyczne, granice i szeregi",
+                    progress = 0.0f,
+                    isLocked = false,
+                    color = Color(0xFF3DBD7D),
+                    icon = Icons.Default.Timeline,
+                    lessons = listOf(
+                        Lesson(
+                            id = "mat_roz_5_1",
+                            name = "Ciągi arytmetyczne",
+                            description = "Wyraz ogólny i obliczanie kolejnych wyrazów",
+                            progress = 0.0f,
+                            isLocked = false,
+                            color = Color(0xFF3DBD7D),
+                            icon = Icons.AutoMirrored.Filled.TrendingUp
+                        ),
+                        Lesson(
+                            id = "mat_roz_5_2",
+                            name = "Granice ciągów",
+                            description = "Najprostsze granice ilorazów i wyrażeń",
+                            progress = 0.0f,
+                            isLocked = false,
+                            color = Color(0xFF3DBD7D),
+                            icon = Icons.Default.Timeline
+                        ),
+                        Lesson(
+                            id = "mat_roz_5_3",
+                            name = "Szeregi geometryczne",
+                            description = "Warunek zbieżności i suma szeregu",
+                            progress = 0.0f,
+                            isLocked = false,
+                            color = Color(0xFF3DBD7D),
+                            icon = Icons.Default.Layers
+                        )
+                    )
+                ),
+                Topic(
+                    id = "mat_roz_6",
+                    name = "Kombinatoryka i prawdopodobieństwo",
+                    description = "Zliczanie przypadków i proste modele losowe",
+                    progress = 0.0f,
+                    isLocked = false,
+                    color = Color(0xFF7C4DFF),
+                    icon = Icons.Default.Groups,
+                    lessons = listOf(
+                        Lesson(
+                            id = "mat_roz_6_1",
+                            name = "Permutacje i kombinacje",
+                            description = "Silnia, wybory i ustawienia",
+                            progress = 0.0f,
+                            isLocked = false,
+                            color = Color(0xFF7C4DFF),
+                            icon = Icons.Default.Groups
+                        ),
+                        Lesson(
+                            id = "mat_roz_6_2",
+                            name = "Schemat Bernoulliego",
+                            description = "Powtarzanie niezależnych prób",
+                            progress = 0.0f,
+                            isLocked = false,
+                            color = Color(0xFF7C4DFF),
+                            icon = Icons.Default.PieChart
+                        ),
+                        Lesson(
+                            id = "mat_roz_6_3",
+                            name = "Prawdopodobieństwo warunkowe",
+                            description = "Zawężanie zbioru zdarzeń",
+                            progress = 0.0f,
+                            isLocked = false,
+                            color = Color(0xFF7C4DFF),
+                            icon = Icons.Default.Percent
+                        )
+                    )
+                ),
+                Topic(
+                    id = "mat_roz_7",
+                    name = "Pochodne i optymalizacja",
+                    description = "Tempo zmian, ekstrema i styczne",
+                    progress = 0.0f,
+                    isLocked = false,
+                    color = Color(0xFFE53935),
+                    icon = Icons.Default.Bolt,
+                    lessons = listOf(
+                        Lesson(
+                            id = "mat_roz_7_1",
+                            name = "Pochodna jako tempo zmian",
+                            description = "Wartość pochodnej w punkcie",
+                            progress = 0.0f,
+                            isLocked = false,
+                            color = Color(0xFFE53935),
+                            icon = Icons.Default.Bolt
+                        ),
+                        Lesson(
+                            id = "mat_roz_7_2",
+                            name = "Ekstrema funkcji",
+                            description = "Minimum i maksimum na podstawie postaci kanonicznej",
+                            progress = 0.0f,
+                            isLocked = false,
+                            color = Color(0xFFE53935),
+                            icon = Icons.Default.BarChart
+                        ),
+                        Lesson(
+                            id = "mat_roz_7_3",
+                            name = "Styczna do wykresu",
+                            description = "Współczynnik kierunkowy stycznej z pochodnej",
+                            progress = 0.0f,
+                            isLocked = false,
+                            color = Color(0xFFE53935),
+                            icon = Icons.Default.Timeline
+                        )
+                    )
+                )
+            )
+        ),
+
+        /**
          * **Chemistry Subject**
          *
          * Includes organic and inorganic chemistry topics:

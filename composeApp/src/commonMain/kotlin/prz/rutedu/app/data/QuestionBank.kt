@@ -69,6 +69,8 @@ object QuestionBank {
                 ChemistryQuestionGenerator.generateFor(lessonId, seed, excludeIds)
             lessonId.startsWith("algebra_") ->
                 AlgebraQuestionGenerator.generateFor(lessonId, seed, excludeIds)
+            lessonId.startsWith("mat_roz_") ->
+                ExtendedMathQuestionGenerator.generateFor(lessonId, seed, excludeIds)
             lessonId.startsWith("mat_1_") || lessonId.startsWith("mat_2_") || 
             lessonId.startsWith("mat_3_") || lessonId.startsWith("mat_4_") || 
             lessonId.startsWith("mat_5_") || lessonId.startsWith("mat_6_") ||
