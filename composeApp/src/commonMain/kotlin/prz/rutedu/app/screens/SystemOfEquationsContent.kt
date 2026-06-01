@@ -53,6 +53,18 @@ import prz.rutedu.app.models.Question
 import prz.rutedu.app.theme.isAppInDarkTheme
 
 
+/**
+ * Question content for [Question.SystemOfEquations] - the student solves a system of equations for multiple variables.
+ *
+ * Prompts the student with the system of equations and accepts input values for each variable (e.g. `x` and `y`).
+ * Validates the solution in a background thread using [MathEngine] to solve the system of equations.
+ *
+ * @param question      The question details: parent equations, variable names, and hint.
+ * @param accentColor   Subject accent color.
+ * @param bottomPadding System navigation bar height padding.
+ * @param onCorrect     Called when all inputs match the system's mathematically calculated solutions.
+ * @param onWrong       Called when any of the checked inputs are incorrect.
+ */
 @Composable
 internal fun SystemOfEquationsContent(
     question: Question.SystemOfEquations,
@@ -81,6 +93,12 @@ internal fun SystemOfEquationsContent(
         )
     }
 
+    /**
+     * Parses a Symja-formatted output number, supporting fraction expressions (e.g., `"3/4"`).
+     *
+     * @param input Symja output value string.
+     * @return Resolved [Double] value, or `null` if parsing fails.
+     */
     fun parseSymjaNumber(input: String): Double? {
         return try {
             when {
@@ -96,6 +114,12 @@ internal fun SystemOfEquationsContent(
         }
     }
 
+    /**
+     * Normalizes the user input by trimming space, converting to lowercase, and removing optional variable prefix.
+     *
+     * @param input Raw text inputted by the user.
+     * @return Normalized string containing only the value.
+     */
     fun normalizeLinearAnswer(input: String): String {
         return input
             .trim()
@@ -111,6 +135,12 @@ internal fun SystemOfEquationsContent(
             }
     }
 
+    /**
+     * Parses a string representing a number, resolving integer, decimal, or fraction formats (e.g. `1/2`).
+     *
+     * @param input Normalized text input.
+     * @return Parsed [Double] value, or `null` if the input is in an invalid format.
+     */
     fun parseToNumber(input: String): Double? {
         return try {
             when {
@@ -126,6 +156,12 @@ internal fun SystemOfEquationsContent(
         }
     }
 
+    /**
+     * Formats the equations and variables into the Symja list notation (e.g., `{eq1, eq2}` and `{x, y}`)
+     * suitable for the solver engine.
+     *
+     * @return A pair where the first string is the system list and the second is the variable list.
+     */
     fun systemSolver(): Pair<String, String> {
 
         val equationsList = question.equations.map { eq ->

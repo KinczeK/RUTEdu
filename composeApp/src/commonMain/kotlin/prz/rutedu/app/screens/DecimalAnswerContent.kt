@@ -30,6 +30,18 @@ import kotlin.math.abs
 import kotlin.math.pow
 import kotlin.math.roundToLong
 
+/**
+ * Question content for [Question.DecimalAnswer] - the student types a decimal numeric answer.
+ *
+ * Provides a text field utilizing the system's decimal-numeric keyboard and displays an optional
+ * persistent inline hint.
+ *
+ * @param question      The question details: prompt, correct answer, precision, and hint.
+ * @param accentColor   Subject accent color.
+ * @param bottomPadding System navigation bar height padding.
+ * @param onCorrect     Called when [checkDecimal] validates the input successfully against the correct answer.
+ * @param onWrong       Called when the checked input is incorrect.
+ */
 @Composable
 internal fun DecimalAnswerContent(
     question: Question.DecimalAnswer,
@@ -153,6 +165,17 @@ internal fun DecimalAnswerContent(
     }
 }
 
+/**
+ * Helper function to validate if the user's input matches the correct decimal value within the specified precision.
+ *
+ * Normalizes comma decimal separators to periods and evaluates if the absolute difference is within
+ * half of the unit of precision (e.g. within 0.005 for a precision of 2).
+ *
+ * @param input     The raw string typed by the student.
+ * @param correct   The correct double value.
+ * @param precision The decimal precision (number of fractional digits).
+ * @return `true` if the input is within tolerance, `false` otherwise.
+ */
 private fun checkDecimal(input: String, correct: Double, precision: Int): Boolean {
     val normalized = input.replace(',', '.')
     val userVal = normalized.toDoubleOrNull() ?: return false

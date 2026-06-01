@@ -27,6 +27,18 @@ import androidx.compose.ui.unit.sp
 import prz.rutedu.app.models.Question
 import prz.rutedu.app.theme.isAppInDarkTheme
 
+/**
+ * Question content for [Question.FractionAnswer] - the student enters a numerator and denominator.
+ *
+ * Renders two input fields separated by a horizontal fraction line, and checks for mathematical
+ * equivalence (by cross-multiplication) against the correct numerator/denominator.
+ *
+ * @param question      The question details: correct numerator/denominator, labels, inline hint, and hint.
+ * @param accentColor   Subject accent color.
+ * @param bottomPadding System navigation bar height padding.
+ * @param onCorrect     Called when the input fraction is mathematically equivalent to the correct fraction.
+ * @param onWrong       Called when the checked fraction is incorrect or invalid.
+ */
 @Composable
 internal fun FractionAnswerContent(
     question: Question.FractionAnswer,
@@ -147,6 +159,16 @@ internal fun FractionAnswerContent(
     }
 }
 
+/**
+ * A customized text field designed for fraction input (numerator or denominator).
+ *
+ * Enforces digit-only input and limits input length to a maximum of 3 characters.
+ *
+ * @param value         The current text value.
+ * @param onValueChange Callback triggered when the input value changes.
+ * @param accentColor    Subject accent color.
+ * @param isWrong        Whether validation has failed, triggering a red error border.
+ */
 @Composable
 private fun FractionInputField(
     value: String,

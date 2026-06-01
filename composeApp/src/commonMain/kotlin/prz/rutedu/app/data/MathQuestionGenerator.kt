@@ -18,6 +18,18 @@ import kotlin.random.Random
  */
 object MathQuestionGenerator {
 
+    /**
+     * Generates or retrieves the ordered list of questions for a specific math lesson.
+     *
+     * Depending on [lessonId], this function delegates to a corresponding procedural generator
+     * method that seeds a random number generator with [seed] to construct 5-10 math questions.
+     * Optionally filters out already answered questions passed in [excludeIds].
+     *
+     * @param lessonId   The math lesson identifier (e.g. `"mat_1_1"`).
+     * @param seed       Random seed to guarantee deterministic question generation.
+     * @param excludeIds Set of question IDs to exclude from the generated list.
+     * @return List of generated math [Question]s.
+     */
     fun questionsFor(lessonId: String, seed: Long, excludeIds: Set<Int> = emptySet()): List<Question> {
         val all = when (lessonId) {
             "mat_1_1" -> mat_1_1(seed); "mat_1_2" -> mat_1_2(seed); "mat_1_3" -> mat_1_3(seed)

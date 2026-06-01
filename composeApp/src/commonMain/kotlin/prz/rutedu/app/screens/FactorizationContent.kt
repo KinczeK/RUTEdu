@@ -53,6 +53,18 @@ import prz.rutedu.app.models.Question
 import prz.rutedu.app.theme.isAppInDarkTheme
 
 
+/**
+ * Question content for [Question.Factorization] - the student enters a simplified/factorized algebraic expression.
+ *
+ * Renders the expression, accepts text input using the ASCII keyboard, and uses [MathEngine] (if available)
+ * to evaluate equivalence between the user's expression and the simplified expression.
+ *
+ * @param question      The question details: expression to simplify and hint.
+ * @param accentColor   Subject accent color.
+ * @param bottomPadding System navigation bar height padding.
+ * @param onCorrect     Called when the input is mathematically equivalent to the correct solution.
+ * @param onWrong       Called when the checked input is incorrect.
+ */
 @Composable
 internal fun FactorizationContent(
     question: Question.Factorization,
@@ -205,32 +217,7 @@ internal fun FactorizationContent(
             }
         }
 
-        if (question.hint != null) {
-            Spacer(Modifier.height(12.dp))
 
-            Row(
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .padding(horizontal = 20.dp)
-                    .clip(RoundedCornerShape(12.dp))
-                    .background(accentColor.copy(alpha = 0.07f))
-                    .padding(horizontal = 14.dp, vertical = 10.dp),
-                verticalAlignment = Alignment.Top
-            ) {
-                Icon(
-                    Icons.Default.Lightbulb,
-                    contentDescription = null,
-                    tint = accentColor,
-                    modifier = Modifier
-                        .size(16.dp)
-                        .padding(top = 2.dp)
-                )
-
-                Spacer(Modifier.width(8.dp))
-
-
-            }
-        }
 
         Spacer(Modifier.height(24.dp))
 
